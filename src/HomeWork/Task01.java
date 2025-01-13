@@ -6,7 +6,6 @@ public class Task01 {
         for (int a = 1; a <= 10; a++) {
             System.out.print(a + "\t");
         }
-        System.out.println();
 
         for (int i = 1; i <= 10; i++) {
             int res;
