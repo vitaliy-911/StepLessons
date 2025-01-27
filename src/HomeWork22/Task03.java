@@ -12,20 +12,21 @@ public class Task03 {
     public static void main(String[] args) {
         int[] arr1 = {23, 45, 233, 56, 76};
         int[] arr2 = {21, 33, 45, 67, 88, 97};
-        int[] newArr = new int[arr1.length + arr2.length];
 
         sortArray(arr1);
         sortArray(arr2);
-        glueAnArray(arr1, arr2, newArr);
-        System.out.println(Arrays.toString(newArr));
+
+        int[] glueAnArray = glueAnArray(arr1, arr2);
+
+        System.out.println(Arrays.toString(glueAnArray));
     }
 
-    public static int[] sortArray(int[] array) {
+    public static void sortArray(int[] array) {
         Arrays.sort(array);
-        return (array);
     }
 
-    public static int[] glueAnArray(int[] arr1, int[] arr2, int[] newArray) {
+    public static int[] glueAnArray(int[] arr1, int[] arr2) {
+        int[] newArray = new int[arr1.length + arr2.length];
         int val = 0;
         for (int i = 0; i < arr1.length; i++) {
             newArray[i] = arr1[i];
