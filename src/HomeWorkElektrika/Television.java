@@ -1,7 +1,8 @@
 package HomeWorkElektrika;
 
 public class Television extends ElectronicDevice {
-    private int zoom;
+    private int zoom = 32;
+    private String name = "Телевизор";
 
     public Television(String brand, String model, int power, int zoom) {
         super(brand, model, power);
@@ -9,12 +10,12 @@ public class Television extends ElectronicDevice {
     }
 
     @Override
-    public void getStatus() {
-        super.getStatus();
+    public String getStatus() {
+        return name + " " + super.getStatus();
     }
 
     @Override
     public String toString() {
-        return super.toString() + zoom;
+        return name + " " + super.toString() + "Размер экрана " + zoom;
     }
 }

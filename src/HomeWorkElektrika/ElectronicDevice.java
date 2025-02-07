@@ -1,10 +1,10 @@
 package HomeWorkElektrika;
 
 public class ElectronicDevice {
-    protected String brand;
-    protected String model;
-    protected int power;
-    protected boolean isOn;
+    private String brand;
+    private String model;
+    private int power;
+    private boolean isOn;
 
     public ElectronicDevice(String brand, String model, int power) {
         this.brand = brand;
@@ -22,13 +22,13 @@ public class ElectronicDevice {
         System.out.println(model + " от " + brand + " Выключен.");
     }
 
-    public void getStatus() {
-        System.out.println(brand + " " + model + (isOn ? " Включен " : " Выключен "));
+    public String getStatus() {
+        return isOn ? "включен" : "Выключен";
     }
 
     @Override
     public String toString() {
-        return "Устройство : " + brand + " " + model + " Мощность " + power + " Вт ";
+        return brand + " " + model + " Мощность " + power + " Вт ";
 
     }
 }
