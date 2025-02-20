@@ -10,7 +10,6 @@ public class ArrayUtil {
     public static int[] generateIntArray(int size, int numberOrigin, int numberBound) {
         int[] array = random.ints(size, numberOrigin, numberBound).toArray();
         System.out.println("сгенерированный массив ->" + Arrays.toString(array));
-
         return array;
     }
 
