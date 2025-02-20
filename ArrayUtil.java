@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class ArrayUtil {
+    private boolean ter;
     private static final Random random = new Random();
 
 
