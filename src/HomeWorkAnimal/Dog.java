@@ -7,7 +7,7 @@ public class Dog extends Pet {
 
     @Override
     public void makeSound() {
-        System.out.println("Собака по имени " + name + "говорит : Гав-гав !");
+        System.out.println("Собака по имени " + name + " говорит: Гав-гав !");
     }
 
     @Override
@@ -22,7 +22,7 @@ public class Dog extends Pet {
 
     @Override
     public void play() {
-        System.out.println(name + " играет в мяч с " + master);
+        System.out.println(name + " играет в мяч с " + getMaster());
     }
 
     @Override

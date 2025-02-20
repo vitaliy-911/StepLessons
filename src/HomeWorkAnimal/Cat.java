@@ -8,7 +8,7 @@ public class Cat extends Pet {
 
     @Override
     public void makeSound() {
-        System.out.println("Кот по имени " + name + " говорит : Мяу ! ");
+        System.out.println("Кот по имени " + name + " говорит: Мяу!");
     }
 
     @Override
@@ -18,7 +18,7 @@ public class Cat extends Pet {
 
     @Override
     public void play() {
-        System.out.println(name + " играет с хозяином " + master);
+        System.out.println(name + " играет с хозяином " + getMaster());
     }
 
     @Override

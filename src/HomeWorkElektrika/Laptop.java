@@ -3,12 +3,12 @@ package HomeWorkElektrika;
 public class Laptop extends ElectronicDevice {
 
     private int timeWorkeBattery;
-    private String name = "Ноутбук";
+    private String name ="Ноутбук";
 
     public Laptop(String brand, String model, int power, int timeWokeBattery) {
         super(brand, model, power);
-
         this.timeWorkeBattery = timeWokeBattery;
+
     }
 
     @Override

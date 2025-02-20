@@ -18,18 +18,24 @@ public class Task03 {
             int yearBuild = value.nextInt(1900, 2025);
             buildingNewHomes[i] = new BuildingNewHome(randomStreet, randomMaterial, window, door, height, yearBuild);
         }
-        for (BuildingNewHome buildingNewHome:buildingNewHomes){
-        System.out.println(buildingNewHome.getDescription());}
+        for (BuildingNewHome buildingNewHome : buildingNewHomes) {
+            System.out.println(buildingNewHome.getDescription());
+        }
 
-        BuildingNewHome result =null;
+        BuildingNewHome result = null;
         for (int i = 0; i < buildingNewHomes.length; i++) {
             if (buildingNewHomes[i].material.equals("бетон") && buildingNewHomes[i].height > 40) {
-                result=buildingNewHomes[i];
+                if (result == null) {
+                    result = buildingNewHomes[i];
+                }
                 if (result.yearBuild < buildingNewHomes[i].yearBuild) {
-                    result=buildingNewHomes[i];
+                    result = buildingNewHomes[i];
                 }
             }
         }
+        System.out.println(result.getDescription());
+
+        System.out.println("*********");
         System.out.println(result.getDescription());
     }
 }

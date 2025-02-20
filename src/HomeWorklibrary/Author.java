@@ -11,6 +11,18 @@ public class Author {
         this.birthYear = birthYear;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
+    }
+
     public String getName() {
         return name;
     }

@@ -23,7 +23,7 @@ public class ElectronicDevice {
     }
 
     public String getStatus() {
-        return isOn ? "включен" : "Выключен";
+        return isOn ? "Включен" : "Выключен";
     }
 
     @Override

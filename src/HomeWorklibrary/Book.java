@@ -27,4 +27,10 @@ public class Book {
     public String toString() {
         return title + "(" + year + ")" + " - " + author;
     }
+
+    public String getDiskription() {
+        return title + "(" + year + ")" + " - " + author;
+
+    }
+
 }

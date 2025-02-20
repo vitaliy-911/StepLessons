@@ -2,7 +2,7 @@ package HomeWorkElektrika;
 
 public class SmartPhone extends ElectronicDevice {
     private int zoomX;
-    private String name = "Смартфон";
+    final String name = "Смартфон";
 
     public SmartPhone(String brand, String model, int power, int zoomX) {
         super(brand, model, power);
