@@ -5,6 +5,8 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
+
+
         Doctor[] doctors = {new Dentist(), new Okulist(), new Surgeon(), new Psychiatrist(), new Therapist()};
         Commission commission = new Commission(doctors);
         ArrayRecruits recruits = new ArrayRecruits(1000);
