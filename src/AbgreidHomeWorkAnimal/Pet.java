@@ -1,14 +1,22 @@
 package AbgreidHomeWorkAnimal;
 
+
+import java.util.Random;
+
 public abstract class Pet extends Animal {
 
-   private Owner owner;
-
+    private Owner owner;
     private String pet = "Домашнее животное";
+    private static Random random = new Random();
+    private static String[] names = {"Жулик", "Борик", "Кизя", "Рубик", "Черныш"};
+
 
     public Pet(String name, String species, int age) {
         super(name, species, age);
+    }
 
+    public Pet(String species, int age) {
+        super(names[random.nextInt(names.length - 1)], species, age);
     }
 
     public abstract void makeSound();
@@ -24,7 +32,7 @@ public abstract class Pet extends Animal {
     }
 
     public void setOwner(Owner owner) {
-        this.owner=owner;
+        this.owner = owner;
     }
 
     public String getOwnerName() {
@@ -36,7 +44,7 @@ public abstract class Pet extends Animal {
         }
     }
 
-    public String toString() {
-        return super.toString() + getPet() + ", хозяин :" + getOwnerName();
-    }
+//    public String toString() {
+//        return this. +" хозяин :" ;
+//    }
 }

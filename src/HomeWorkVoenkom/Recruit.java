@@ -74,6 +74,6 @@ public class Recruit {
     }
 
     public String toString() {
-        return firstName + " " + middleName + " " + lastName + " — " + (valid ? "годен + \n": "не годен (" + diagnosis + ")");
+        return firstName + " " + middleName + " " + lastName + " — " + (valid ? "годен + \t": "не годен +(" + diagnosis + ")");
     }
 }
