@@ -2,9 +2,13 @@ package AbgreidHomeWorkAnimal;
 
 public class Cat extends Pet {
 
-    public Cat(String name, String species, int age) {
-        super(name, species, age);
+    private static String species = " Кот ";
+
+    public Cat( int age) {
+        super(species, age);
+
     }
+
 
     @Override
     public void makeSound() {
@@ -18,7 +22,7 @@ public class Cat extends Pet {
 
     @Override
     public void play() {
-        System.out.println(name + " играет с хозяином " +getOwnerName());
+        System.out.println(name + " играет с хозяином " + getOwnerName());
     }
 
     @Override

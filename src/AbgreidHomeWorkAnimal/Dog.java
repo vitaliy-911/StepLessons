@@ -1,8 +1,14 @@
 package AbgreidHomeWorkAnimal;
 
 public class Dog extends Pet {
-    public Dog(String name, String species, int age) {
-        super(name, species, age);
+    private static String species = " Собака ";
+
+    public Dog(int age) {
+        super(species, age);
+    }
+
+    public String getSpecies() {
+        return species;
     }
 
     @Override

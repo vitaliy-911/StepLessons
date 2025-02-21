@@ -6,23 +6,22 @@ public class Main {
         WildAnimal lion = new Lion("Симба", "Лев", 5, "Африка");
         WildAnimal hyena = new Hyena("Скали", "Гиена", 4, "Азия");
 
-        Pet cat = new Cat("Симба", "Кот", 3);
-        Pet dog = new Dog("Жулик", "Собака", 3);
-        Pet dog1 = new Dog("Кеша", "Собака", 3);
-        Pet cat1 = new Cat("Симба", "Кот", 4);
+
+        Pet dog = new Dog(12);
+        Pet dog1 = new Dog( 3);
+        Pet cat1 = new Cat( 4);
+        Dog dog2=new Dog(8);
 
         Owner owner = new Owner();
         Owner owner1 = new Owner();
 
-
-        owner.addPet(cat);
         owner1.addPet(dog);
         owner1.addPet(dog1);
         owner.addPet(cat1);
 
 
         WildAnimal[] wildAnimals = {lion, hyena};
-        Pet[] pets = {cat, dog,cat1,dog1};
+        Pet[] pets = { dog,cat1,dog1};
 
 //        for (WildAnimal wildAnimal : wildAnimals) {
 //            System.out.println(wildAnimal.toString());
@@ -42,5 +41,13 @@ public class Main {
             System.out.println();
         }
         System.out.println("Общее количество животных " + Animal.getTotalAnimals());
+
+
+        for (int i = 1; i <200 ; i++) {
+            Pet pet = PetFactory.next();
+            System.out.println(pet);
+        }
+
+
     }
 }
