@@ -21,12 +21,13 @@ public abstract class Animal {
 
     public abstract void eat();
 
+    public static int getTotalAnimals() {
+        return totalAnimals;
+    }
+
     @Override
     public String toString() {
         return species + " по имени " + name + ", возраст: " + age + " (ID: " + id + " )";
     }
 
-    public static int getTotalAnimals() {
-        return totalAnimals;
-    }
 }

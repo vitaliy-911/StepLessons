@@ -11,20 +11,10 @@ public abstract class WildAnimal extends Animal {
         this.habitab = habitab;
     }
 
-    public abstract void makeSound();
-
-    public abstract void move();
-
-    public abstract void eat();
-
     public abstract void hunt();
-
-    public String getWildAnimal() {
-        return wildAnimal;
-    }
 
     @Override
     public String toString() {
-        return super.toString() + " (" + getWildAnimal() + ", среда обитания ";
+        return super.toString() + " (" + wildAnimal + ", среда обитания ";
     }
 }
