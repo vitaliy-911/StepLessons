@@ -7,7 +7,7 @@ public abstract class Pet extends Animal {
     private Owner owner;
     private String pet = "Домашнее животное";
     private static Random random = new Random();
-    private static String[] names = {"Жулик", "Борик", "Кизя", "Рубик", "Черныш"};
+    private static String[] names = {"Жулик", "Борик", "Кизя", "Рубик", "Черныш","Васька"};
     private static int age;
 
     public Pet(String species) {
