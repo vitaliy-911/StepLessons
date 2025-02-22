@@ -4,11 +4,9 @@ public class Cat extends Pet {
 
     private static String species = " Кот ";
 
-    public Cat( int age) {
-        super(species, age);
-
+    public Cat() {
+        super(species);
     }
-
 
     @Override
     public void makeSound() {

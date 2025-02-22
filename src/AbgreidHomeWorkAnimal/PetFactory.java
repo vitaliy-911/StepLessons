@@ -9,9 +9,9 @@ public class PetFactory {
     public static Pet next() {
         boolean val = random.nextBoolean();
         if (val)
-            return new Dog(8);
+            return new Dog();
         else {
-            return new Cat(6);
+            return new Cat();
         }
     }
 }

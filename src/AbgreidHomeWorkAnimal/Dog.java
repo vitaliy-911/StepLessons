@@ -1,10 +1,13 @@
 package AbgreidHomeWorkAnimal;
 
+import java.util.Random;
+
 public class Dog extends Pet {
     private static String species = " Собака ";
+    Random random = new Random();
 
-    public Dog(int age) {
-        super(species, age);
+    public Dog() {
+        super(species);
     }
 
     public String getSpecies() {
