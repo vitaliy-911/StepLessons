@@ -1,6 +1,7 @@
 package AbgreidHomeWorkAnimal;
 
 public class Main {
+
     public static void main(String[] args) {
         Owner[] owners = new Owner[100];
         for (int i = 0; i < owners.length; i++) {
