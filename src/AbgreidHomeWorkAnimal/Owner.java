@@ -54,7 +54,6 @@ public class Owner {
     }
 
     public void addPet(Pet pet) {
-
         Pet[] pets1 = new Pet[pets.length + 1];
         System.arraycopy(pets, 0, pets1, 0, pets.length);
         pets1[pets1.length - 1] = pet;
@@ -62,6 +61,7 @@ public class Owner {
         ++totalPets;
     }
 
+    @Override
     public String toString() {
         return getFullName() + " : количество питомцев - " + getTotalPets();
     }

@@ -7,8 +7,8 @@ public class PetFactory {
     private static Random random = new Random();
 
     public static Pet next() {
-        boolean val = random.nextBoolean();
-        if (val)
+        boolean isDog = random.nextBoolean();
+        if (isDog)
             return new Dog();
         else {
             return new Cat();

@@ -27,9 +27,4 @@ public class Cat extends Pet {
     public void eat() {
         System.out.println(name + " ест рыбу ");
     }
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
 }
