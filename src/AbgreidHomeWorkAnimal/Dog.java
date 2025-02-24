@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class Dog extends Pet {
     private static String species = " Собака ";
-    Random random = new Random();
 
     public Dog() {
         super(species);
@@ -32,10 +31,5 @@ public class Dog extends Pet {
     @Override
     public void play() {
         System.out.println(name + " играет в мяч с " + getOwnerName());
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
     }
 }
