@@ -1,6 +1,6 @@
 package AbgreidHomeWorkAnimal;
 
-public class Bird extends Animal {
+public class Bird extends Animal implements Flyable, Swimabl {
 
     public Bird(String name, String species, int age) {
         super(name, species, age);
@@ -19,5 +19,15 @@ public class Bird extends Animal {
     @Override
     public void eat() {
         System.out.println(name + " клюет зерна.");
+    }
+
+    @Override
+    public void fly() {
+        System.out.println(name + " летант ");
+    }
+
+    @Override
+    public void swim() {
+        System.out.println(name + "плавает");
     }
 }

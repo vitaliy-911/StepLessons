@@ -11,6 +11,11 @@ public class Main {
             }
             System.out.println(owners[i]);
         }
+        System.out.println("общее " + Animal.getTotalAnimals());
+
+
+
     }
+
 }
 
