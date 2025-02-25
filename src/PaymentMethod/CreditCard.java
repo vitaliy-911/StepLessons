@@ -2,8 +2,8 @@ package PaymentMethod;
 
 public class CreditCard implements PaymentMethod {
 
-    private String cardHolder;
-    private int cardNumber;
+    private final String cardHolder;
+    private final int cardNumber;
 
     public CreditCard(int cardNumber, String cardHolder) {
         this.cardNumber = cardNumber;
