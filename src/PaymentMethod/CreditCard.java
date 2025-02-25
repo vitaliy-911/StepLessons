@@ -2,8 +2,8 @@ package PaymentMethod;
 
 public class CreditCard implements PaymentMethod {
 
-    private int cardNumber;
     private String cardHolder;
+    private int cardNumber;
 
     public CreditCard(int cardNumber, String cardHolder) {
         this.cardNumber = cardNumber;
@@ -12,6 +12,6 @@ public class CreditCard implements PaymentMethod {
 
     @Override
     public void pay(double amound) {
-        System.out.println("Оплата" + amound + "c кредитной карты" + cardHolder);
+        System.out.println(" Оплата " + amound + " c кредитной карты номер : " + cardNumber + " " + cardHolder);
     }
 }

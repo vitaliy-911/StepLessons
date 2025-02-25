@@ -10,7 +10,6 @@ public class PayPal implements PaymentMethod {
 
     @Override
     public void pay(double amound) {
-        System.out.println(" оплата " + amound + " " + email);
-        
+        System.out.println(" оплата " + amound + "Через PL аккаунт " + email);
     }
 }
