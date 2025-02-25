@@ -3,7 +3,7 @@ package HomeWorkVoenkom;
 public class Surgeon extends Doctor {
 
     public void test(Recruit recruit) {
-        if (recruit.flatFeet ==true) {
+        if (!recruit.isValid() ) {
             recruit.setValid(false);
             recruit.setDiagnosis(" плоскостопие ");
         }else {

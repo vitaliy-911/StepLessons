@@ -1,8 +1,8 @@
 package HomeWorkVoenkom;
 
-public  class Doctor {
+public class Doctor {
 
-    public  void test(Recruit recruit){
+    public void test(Recruit recruit) {
 
     }
 }

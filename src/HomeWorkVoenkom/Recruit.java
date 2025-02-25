@@ -2,17 +2,17 @@ package HomeWorkVoenkom;
 
 public class Recruit {
 
-     static int idCounter = 0;
-     int id;
-     String firstName;
-     String middleName;
-     String lastName;
-     boolean valid;
-     String diagnosis;
-     double visionCoeff;
-     boolean flatFeet;
-     int implantCount;
-     int cardiogram;
+    static int idCounter = 0;
+    private int id;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private boolean valid;
+    private String diagnosis;
+    private double visionCoeff;
+    private boolean flatFeet;
+    private int implantCount;
+    private int cardiogram;
 
     public Recruit(String firstName, String middleName, String lastName, double visionCoeff, boolean flatFeet, int implantCount, int cardiogram, boolean valid) {
         this.id = ++idCounter;
@@ -73,7 +73,12 @@ public class Recruit {
         return cardiogram;
     }
 
+    @Override
     public String toString() {
-        return firstName + " " + middleName + " " + lastName + " — " + (valid ? "годен + \t": "не годен +(" + diagnosis + ")");
+        if (valid) {
+            return firstName + " " + middleName + " " + lastName + " — годен";
+        } else {
+            return firstName + " " + middleName + " " + lastName + " не годен диагноз - " + diagnosis;
+        }
     }
 }

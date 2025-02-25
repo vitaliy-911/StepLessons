@@ -7,9 +7,9 @@ public class RecruitGenerator {
     private static String[] firsNames = {"Петр", "Сергей", "Глеб", "Влад"};
     private static String[] middleNames = {"Петрович", "Сергеевич", "Олегович", "Степанович"};
     private static String[] lastNames = {"Петров", "Иванов", "Сидоров", "Козлов"};
-    Random random = new Random();
+    private static Random random = new Random();
 
-    public Recruit generate() {
+    public static Recruit generate() {
 
         String firstName = firsNames[random.nextInt(firsNames.length)];
         String middleName = middleNames[random.nextInt(middleNames.length)];
