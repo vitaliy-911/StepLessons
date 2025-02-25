@@ -1,7 +1,5 @@
 package HomeWorkVoenkom;
 
-import ClassWork.L30_01_25.Wheel;
-
 public class ArrayRecruits {
 
     private Recruit[] recruits;
@@ -15,7 +13,7 @@ public class ArrayRecruits {
     public void add(Recruit recruit) {
         if (size < recruits.length) {
             recruits[size++] = recruit;
-        }else {
+        } else {
             Recruit[] recruits1 = new Recruit[recruits.length + 1];
             for (int i = 0; i < recruits.length; i++) {
                 recruits1[i] = recruits[i];

@@ -8,7 +8,6 @@ public class Commission extends Doctor {
         this.doctors = doctors;
     }
 
-
     public void test(Recruit recruit) {
         for (Doctor doctor : doctors) {
             doctor.test(recruit);
