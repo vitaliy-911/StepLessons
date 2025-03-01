@@ -1,7 +1,4 @@
 package Devaces;
-//Laptop – добавляет поле int batteryLife (время работы от батареи).
-//Переопределяет toString() для добавления информации о батарее.
-//charge() увеличивает уровень заряда, но не больше 100%
 
 public class Laptop extends Devace implements Chargeable {
 

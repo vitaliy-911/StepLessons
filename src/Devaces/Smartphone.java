@@ -1,7 +1,4 @@
 package Devaces;
-//Smartphone – добавляет поле int cameraResolution (разрешение камеры).
-//Переопределяет toString() для добавления информации о камере.
-//charge() увеличивает уровень заряда, но не больше 100%
 
 public class Smartphone extends Devace implements Chargeable {
 
@@ -12,11 +9,9 @@ public class Smartphone extends Devace implements Chargeable {
         this.cameraResolution = 12;
     }
 
-
     @Override
     public void charge(int amount) {
         batteryLevel = Math.min(100, batteryLevel + amount);
-
     }
 
     @Override

@@ -1,10 +1,5 @@
 package Devaces;
 
-//void printDevice(Device device) – выводит информацию об устройстве.
-//void printDevice(Device[] devices) – выводит информацию об устройствах.
-//int getTotalDevices() – возвращает количество всех устройств.
-//void chargeDevice(Chargeable device, int amount) – заряжает одно устройство.
-//void chargeDevice(Chargeable[] devices, int amount) – заряжает массив устройств.
 public class DeviceManager {
 
     public static void printDevice(Devace devace) {
