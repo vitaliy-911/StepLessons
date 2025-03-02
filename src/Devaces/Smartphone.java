@@ -21,6 +21,6 @@ public class Smartphone extends Devace implements Chargeable {
 
     @Override
     public String toString() {
-        return super.toString() + " камера " + cameraResolution + " MP заряд " + batteryLevel + "%";
+        return super.toString() + " камера " + cameraResolution + " MP заряд " + getBatteryLevel() + "%";
     }
 }

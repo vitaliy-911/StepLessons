@@ -22,6 +22,6 @@ public class Laptop extends Devace implements Chargeable {
 
     @Override
     public String toString() {
-        return super.toString() + " время работы от батареи " + batteryLife + " часов заряд " + batteryLevel + "%";
+        return super.toString() + " время работы от батареи " + batteryLife + " часов заряд " + getBatteryLevel() + "%";
     }
 }
