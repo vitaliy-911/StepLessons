@@ -4,9 +4,9 @@ public class Smartphone extends Devace implements Chargeable {
 
     private final int cameraResolution;
 
-    public Smartphone(String serialNumber, String model, int batteryLevel) {
+    public Smartphone(String serialNumber, String model, int batteryLevel,int cameraResolution) {
         super(serialNumber, model, batteryLevel);
-        this.cameraResolution = 12;
+        this.cameraResolution = cameraResolution;
     }
 
     @Override
