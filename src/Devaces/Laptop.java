@@ -4,9 +4,9 @@ public class Laptop extends Devace implements Chargeable {
 
     private final int batteryLife;
 
-    public Laptop(String serialNumber, String model, int batteryLevel) {
+    public Laptop(String serialNumber, String model, int batteryLevel,int batteryLife) {
         super(serialNumber, model, batteryLevel);
-        this.batteryLife = 18;
+        this.batteryLife = batteryLife;
     }
 
 
@@ -22,6 +22,6 @@ public class Laptop extends Devace implements Chargeable {
 
     @Override
     public String toString() {
-        return super.toString() + " время работы от батареи " + batteryLife + " часов заряд " + batteryLevel + "%";
+        return super.toString() + " время работы от батареи " + batteryLife + " часов заряд " + getBatteryLevel() + "%";
     }
 }

@@ -2,9 +2,9 @@ package Devaces;
 
 import java.util.Objects;
 
-public class Devace {
+public  class Devace implements Cloneable {
 
-    private String serialNumber;
+    private final String serialNumber;
     private String model;
     private static int totalDevices = 0;
     protected int batteryLevel;
@@ -16,7 +16,7 @@ public class Devace {
         this.batteryLevel = batteryLevel;
     }
 
-    public final String getSerialNumber() {
+    public final String getSerialNumber(String serialNumber) {
         return serialNumber;
     }
 
@@ -31,18 +31,19 @@ public class Devace {
         return totalDevices;
     }
 
+    @Override
     public Devace clone() {
-        return new Devace(serialNumber, model, batteryLevel);
+        return new Devace(getSerialNumber(serialNumber), model, batteryLevel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(serialNumber);
+        return Objects.hashCode(getSerialNumber(serialNumber));
 
     }
 
     @Override
     public String toString() {
-        return "Устройство " + model + " Серийный номер " + serialNumber;
+        return "Устройство " + model + " Серийный номер " + getSerialNumber(serialNumber);
     }
 }
