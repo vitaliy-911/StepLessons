@@ -22,7 +22,7 @@ public class DeviceManager {
     }
 
     public static void chargeDevice(Chargeable[] devices, int amount) {
-        for (Chargeable dev : devices) {
+        for (Chargeable dev : devices) {;
             dev.charge(amount);
             System.out.println(dev.getClass().getSimpleName() + " заряжaем на " + amount + "%");
         }

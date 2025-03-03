@@ -2,7 +2,7 @@ package Devaces;
 
 import java.util.Objects;
 
-public  class Devace implements Cloneable {
+public class Devace implements Cloneable {
 
     private final String serialNumber;
     private String model;
@@ -39,7 +39,6 @@ public  class Devace implements Cloneable {
     @Override
     public int hashCode() {
         return Objects.hashCode(getSerialNumber(serialNumber));
-
     }
 
     @Override

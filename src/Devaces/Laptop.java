@@ -9,7 +9,6 @@ public class Laptop extends Devace implements Chargeable {
         this.batteryLife = batteryLife;
     }
 
-
     @Override
     public void charge(int amount) {
         batteryLevel = Math.min(100, batteryLevel + amount);
