@@ -3,8 +3,8 @@ package Devaces;
 public class Main {
     public static void main(String[] args) {
 
-        Devace phone = new Smartphone("1234", "Samsung", 10,14);
-        Devace laptop = new Laptop("Pro", "MacBook", 20,24);
+        Devace phone = new Smartphone("1234", "Samsung", 10, 14);
+        Devace laptop = new Laptop("Pro", "MacBook", 20, 24);
 
         DeviceManager.printDevice(phone);
         DeviceManager.printDevice(laptop);
