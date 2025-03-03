@@ -2,7 +2,7 @@ package Devaces;
 
 import java.util.Objects;
 
-public class Devace implements Cloneable {
+public abstract class Devace implements Cloneable {
 
     private final String serialNumber;
     private String model;
@@ -32,8 +32,8 @@ public class Devace implements Cloneable {
     }
 
     @Override
-    public Devace clone() {
-        return new Devace(getSerialNumber(serialNumber), model, batteryLevel);
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
     @Override
