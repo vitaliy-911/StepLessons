@@ -20,6 +20,11 @@ public class Laptop extends Devace implements Chargeable {
     }
 
     @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
     public String toString() {
         return super.toString() + " время работы от батареи " + batteryLife + " часов заряд " + getBatteryLevel() + "%";
     }

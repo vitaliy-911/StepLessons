@@ -20,6 +20,11 @@ public class Smartphone extends Devace implements Chargeable {
     }
 
     @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
     public String toString() {
         return super.toString() + " камера " + cameraResolution + " MP заряд " + getBatteryLevel() + "%";
     }
