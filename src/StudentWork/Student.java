@@ -2,9 +2,9 @@ package StudentWork;
 
 public class Student {
 
-    private String name;
-    private int age;
-    private double grade;
+    private final String name;
+    private final int age;
+    private final double grade;
 
     public Student(String name, int age, double grade) {
 
@@ -13,12 +13,13 @@ public class Student {
         this.grade = grade;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", grade=" + grade +
-                '}';
+        return name + " Возраст " + age + " Средний балл " + grade;
+
     }
 }
