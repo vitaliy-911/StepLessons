@@ -5,31 +5,36 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Student> students = new ArrayList<>();
+        final List<Student> students = new ArrayList<>();
+        final List<Student> students1 = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             students.add(StudentFactory.next());
+            students1.add(StudentFactory.next());
         }
 
-
-    }  public static void findStudentName(List<Student> students, String name) {
-        for (Student student : students) {
-            if (student.getName().equals(name)) {
-                System.out.println(student);
-            }
-            System.out.println("Такого студента нет");
-            break;
-        }
     }
 
-    public static void removeStudentName(List<Student> students, String name) {
+    public Student findStudentName(List<Student> students, String name) {
+        for (Student student : students) {
+            if (student.getName().equals(name)) {
+                return student;
+            }
+        }
+        return null;
+    }
+
+    static void removeStudentName(List<Student> students, String name) {
         students.removeIf(student -> student.getName().equals(name));
     }
 
-    public static void addStudentToList(List<Student> students, List<Student> students1) {
+    static void addStudentToList(List<Student> students, List<Student> students1) {
         students1.addAll(students);
     }
 
-    public static void replaceStudentATIndex(List<Student> students, int index) {
-        students.set(index, StudentFactory.next());
+    public static void replaceStudentATIndex(List<Student> students, int index, Student student) {
+        if (students.size() > index || index < 0) {
+            return;
+        }
+        students.set(index, student);
     }
 }

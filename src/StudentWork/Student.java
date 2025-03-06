@@ -13,16 +13,14 @@ public class Student {
         this.grade = grade;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", grade=" + grade +
-                '}';
-    }
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return getName() + age + " " + grade;
+
     }
 }
