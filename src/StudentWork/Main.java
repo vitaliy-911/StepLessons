@@ -12,7 +12,7 @@ public class Main {
         }
         sortArray(students);
         System.out.println(students);
-        sortBYcomporator(students1,new StudentNameComparator());
+        sortBYComparator(students1,new StudentNameComparator());
         System.out.println(students1);
 
 
@@ -20,7 +20,7 @@ public class Main {
 
     }
 
-    private static void sortBYcomporator(List<Student> students1, Comparator <Student>comparator) {
+    private static void sortBYComparator(List<Student> students1, Comparator <Student>comparator) {
         students1.sort(comparator);
 
     }
