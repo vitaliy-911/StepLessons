@@ -1,6 +1,7 @@
 package StudentWork;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -11,6 +12,9 @@ public class Main {
             students.add(StudentFactory.next());
             students1.add(StudentFactory.next());
         }
+        sortArray(students);
+        System.out.println(students);
+
 
     }
 
@@ -32,9 +36,13 @@ public class Main {
     }
 
     public static void replaceStudentATIndex(List<Student> students, int index, Student student) {
-        if (students.size() > index || index < 0) {
+        if (students.size() < index || index < 0) {
             return;
         }
         students.set(index, student);
+    }
+
+    private static void sortArray(List<Student> students) {
+        Collections.sort(students);
     }
 }
