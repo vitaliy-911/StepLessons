@@ -21,4 +21,8 @@ public class Student {
                 ", grade=" + grade +
                 '}';
     }
+
+    public String getName() {
+        return name;
+    }
 }
