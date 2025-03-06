@@ -1,8 +1,6 @@
 package StudentWork;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,7 +12,16 @@ public class Main {
         }
         sortArray(students);
         System.out.println(students);
+        sortBYcomporator(students1,new StudentNameComparator());
+        System.out.println(students1);
 
+
+
+
+    }
+
+    private static void sortBYcomporator(List<Student> students1, Comparator <Student>comparator) {
+        students1.sort(comparator);
 
     }
 
@@ -45,4 +52,5 @@ public class Main {
     private static void sortArray(List<Student> students) {
         Collections.sort(students);
     }
+
 }
