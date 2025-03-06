@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         final List<Student> students = new ArrayList<>();
         final List<Student> students1 = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1000; i++) {
             students.add(StudentFactory.next());
             students1.add(StudentFactory.next());
         }
