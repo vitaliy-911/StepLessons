@@ -18,7 +18,7 @@ public class TransportManager {
     }
 
     void sortTransportBySpeed(List<Transport> transportList) {
-        transportList.sort(Comparator.comparing(transport -> transport.getSpeed()));
+        transportList.sort(Comparator.comparing(Transport::getSpeed));
 
     }
 
