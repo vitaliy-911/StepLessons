@@ -2,13 +2,21 @@ package TransportWork;
 
 import java.util.Objects;
 
-public abstract class Transport {
+public abstract class Transport  {
     private String model;
     private int speed;
 
     public Transport(String model, int speed) {
         this.model = model;
         this.speed = speed;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getSpeed() {
+        return speed;
     }
 
     @Override
@@ -30,4 +38,7 @@ public abstract class Transport {
                 ", speed=" + speed +
                 '}';
     }
+
+
+
 }

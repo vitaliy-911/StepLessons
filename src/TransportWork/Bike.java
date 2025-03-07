@@ -1,6 +1,6 @@
 package TransportWork;
 
-public class Bike extends Transport {
+public  class Bike extends Transport {
 
     private boolean hasSidecar;
 
@@ -13,4 +13,5 @@ public class Bike extends Transport {
     public String toString() {
         return super.toString() + " " + hasSidecar;
     }
+
 }
