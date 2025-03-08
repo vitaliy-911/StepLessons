@@ -13,12 +13,11 @@ public class TransportManager {
     }
 
     void removeTransport(String model) {
-       transportList.removeIf(transport -> transport.getModel().equals(model));
-       uniqueTransportSet.removeIf(transport -> transport.getModel().equals(model));
+        transportList.removeIf(transport -> transport.getModel().equals(model));
+        uniqueTransportSet.removeIf(transport -> transport.getModel().equals(model));
     }
 
-    void sortTransportBySpeed(List<Transport> transportList) {
-        transportList.sort(Comparator.comparing(Transport::getSpeed));
+    private static void sortTransportBySpeed(List<Transport> transportList) {
 
     }
 

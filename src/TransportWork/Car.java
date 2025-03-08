@@ -1,6 +1,7 @@
 package TransportWork;
 
 public class Car extends Transport {
+
     private final String fuelType;
 
     public Car(String model, int speed, String fuelType) {
