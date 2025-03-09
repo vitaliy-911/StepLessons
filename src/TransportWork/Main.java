@@ -7,14 +7,15 @@ public class Main {
             TransportManager.manager.addTransport(TransportFactory.next());
             TransportManager.manager.removeTransport("NISSAN");
         }
-
-       TransportManager.manager.printAllTransport();
-        TransportManager.manager.printUniqueTransport();
-
         TransportManager.manager.sortTransportByModel();
         TransportManager.manager.printAllTransport();
-        TransportManager.manager.sortTransportBySpeed();
-        TransportManager.manager.printAllTransport();
+        TransportManager.manager.printUniqueTransport();
+
+
+
+
+
+
 
     }
 }
