@@ -1,20 +1,20 @@
 package TransportWork;
 
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-        TransportManager transportManager=new TransportManager();
-        for (int i = 0; i <10 ; i++) {
-            transportManager.addTransport(TransportFactory.next());
 
+        for (int i = 0; i <10 ; i++) {
+            TransportManager.manager.addTransport(TransportFactory.next());
+            TransportManager.manager.removeTransport("NISSAN");
         }
 
-        System.out.println(TransportManager.transportList);
-        System.out.println("_________________");
-        System.out.println(TransportManager.transportList);
-        System.out.println("___________");
-        System.out.println(TransportManager.uniqueTransportSet);
+       TransportManager.manager.printAllTransport();
+        TransportManager.manager.printUniqueTransport();
+
+        TransportManager.manager.sortTransportByModel();
+        TransportManager.manager.printAllTransport();
+        TransportManager.manager.sortTransportBySpeed();
+        TransportManager.manager.printAllTransport();
 
     }
 }

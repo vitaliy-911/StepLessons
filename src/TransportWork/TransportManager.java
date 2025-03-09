@@ -4,6 +4,8 @@ import java.util.*;
 
 public class TransportManager {
 
+    public final static TransportManager manager = new TransportManager();
+
     static List<Transport> transportList = new ArrayList<>();
     static Set<Transport> uniqueTransportSet = new HashSet<>();
 
@@ -13,19 +15,24 @@ public class TransportManager {
     }
 
     void removeTransport(String model) {
+
         transportList.removeIf(transport -> transport.getModel().equals(model));
         uniqueTransportSet.removeIf(transport -> transport.getModel().equals(model));
     }
 
-    private static void sortTransportBySpeed(List<Transport> transportList) {
-
+    void sortTransportBySpeed() {
+        transportList.sort(Comparator.comparing(Transport::getSpeed));
     }
-    static void printAllTransport(){
+
+    void sortTransportByModel() {
+        transportList.sort(Comparator.comparing(Transport::getModel));
+    }
+
+    void printAllTransport() {
         System.out.println(transportList);
     }
-    static void printUniqueTransport(){
+
+    void printUniqueTransport() {
         System.out.println(uniqueTransportSet);
     }
-
-
 }
