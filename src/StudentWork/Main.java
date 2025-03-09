@@ -12,6 +12,7 @@ public class Main {
         }
         sortArray(students);
         System.out.println(students);
+        System.out.println(students);
         sortBYComparator(students1,new StudentNameComparator());
         System.out.println(students1);
 

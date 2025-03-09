@@ -20,6 +20,12 @@ public class TransportManager {
     private static void sortTransportBySpeed(List<Transport> transportList) {
 
     }
+    static void printAllTransport(){
+        System.out.println(transportList);
+    }
+    static void printUniqueTransport(){
+        System.out.println(uniqueTransportSet);
+    }
 
 
 }
