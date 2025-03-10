@@ -1,12 +1,11 @@
 package TransportWork;
 
 import java.util.*;
-import java.util.stream.Stream;
 
 public class TransportManager {
 
-    static List<Transport> transportList = new ArrayList<>();
-    static Set<Transport> uniqueTransportSet = new TreeSet<>(new TransportComparator());
+    private List<Transport> transportList = new ArrayList<>();
+    private Set<Transport> uniqueTransportSet = new TreeSet<>();
 
     void addTransport(Transport transport) {
         transportList.add(transport);
@@ -20,11 +19,17 @@ public class TransportManager {
 
     void sortTransportBySpeed() {
         transportList.sort(Comparator.comparing(Transport::getSpeed));
-
+      TreeSet<Transport> sortedBySpeedSet = new TreeSet<>(new TransportSpeedComparator());
+      sortedBySpeedSet.addAll(uniqueTransportSet);
+       uniqueTransportSet = sortedBySpeedSet;
     }
 
     void sortTransportByModel() {
         transportList.sort(Comparator.comparing(Transport::getModel));
+        TreeSet<Transport> sortedByModelSet = new TreeSet<>(new TransportModelComparator());
+        sortedByModelSet.addAll(uniqueTransportSet);
+        uniqueTransportSet = sortedByModelSet;
+
     }
 
     void printAllTransport() {
@@ -33,5 +38,6 @@ public class TransportManager {
 
     void printUniqueTransport() {
         System.out.println(uniqueTransportSet);
+
     }
 }

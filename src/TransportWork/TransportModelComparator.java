@@ -2,7 +2,7 @@ package TransportWork;
 
 import java.util.Comparator;
 
-public class TransportComparator implements Comparator<Transport> {
+public class TransportModelComparator implements Comparator<Transport> {
 
     @Override
     public int compare(Transport o1, Transport o2) {

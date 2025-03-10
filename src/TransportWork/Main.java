@@ -1,9 +1,10 @@
 package TransportWork;
 
+
 public class Main {
     public static void main(String[] args) {
         TransportManager manager = new TransportManager();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             manager.addTransport(TransportFactory.next());
         }
         manager.printAllTransport();
@@ -14,12 +15,13 @@ public class Main {
         manager.printUniqueTransport();
         System.out.println("Сортируем по модели");
         manager.sortTransportByModel();
-        manager.printUniqueTransport();
+
         manager.printAllTransport();
         System.out.println("Сортируем по скорости");
         manager.sortTransportBySpeed();
-        manager.printAllTransport();
         manager.printUniqueTransport();
+
+
 
 
     }
