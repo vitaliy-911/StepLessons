@@ -21,8 +21,9 @@ public class Main {
         manager.sortTransportBySpeed();
         manager.printUniqueSortTransport();
 
-
-
-
+    }
+    public static void test(String...strings){
+        String hi=strings[0];
+        String woo=strings[1];
     }
 }

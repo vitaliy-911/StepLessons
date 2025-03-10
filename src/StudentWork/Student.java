@@ -15,6 +15,10 @@ public class Student implements Comparable<Student> {
         this.grade = grade;
     }
 
+    public int getAge() {
+        return age;
+    }
+
     public String getName() {
         return name;
     }
