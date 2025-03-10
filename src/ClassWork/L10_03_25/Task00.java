@@ -42,6 +42,8 @@ public class Task00 {
 
         }
         System.out.println(ageStudentsMap);
+        String simplenama=student1.getClass().getSimpleName();
+        System.out.println(simplenama);
 
 
 //        System.out.println(age);
