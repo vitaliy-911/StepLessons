@@ -19,7 +19,8 @@ public class Main {
         manager.printAllTransport();
         System.out.println("Сортируем по скорости");
         manager.sortTransportBySpeed();
-        manager.printUniqueTransport();
+
+        manager.printUniqueSortTransport();
 
 
 

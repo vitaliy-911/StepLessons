@@ -30,14 +30,15 @@ public abstract class Transport implements Comparable<Transport> {
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Transport transport = (Transport) o;
-        return  Objects.equals(model, transport.model);
+        return Objects.equals(model, transport.model);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(model);
+        return Objects.hash(getClass(), model);
     }
 
     @Override
