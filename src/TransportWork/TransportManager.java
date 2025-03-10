@@ -29,7 +29,6 @@ public class TransportManager {
         TreeSet<Transport> sortedByModelSet = new TreeSet<>(new TransportModelComparator());
         sortedByModelSet.addAll(uniqueTransportSet);
         uniqueTransportSet = sortedByModelSet;
-
     }
 
     void printAllTransport() {
