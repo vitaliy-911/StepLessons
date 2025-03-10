@@ -3,8 +3,8 @@ package TransportWork;
 import java.util.Objects;
 
 public abstract class Transport implements Comparable<Transport> {
-    private String model;
-    private int speed;
+    private final String model;
+    private final int speed;
 
     public Transport(String model, int speed) {
         this.model = model;
@@ -25,29 +25,24 @@ public abstract class Transport implements Comparable<Transport> {
         if (nameCompare != 0) {
             return nameCompare;
         }
-        return Integer.compare(this.speed,o.speed);
+        return Integer.compare(this.speed, o.speed);
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Transport transport = (Transport) o;
-        return speed == transport.speed && Objects.equals(model, transport.model);
+        return  Objects.equals(model, transport.model);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(model,speed);
+        return Objects.hash(model, speed);
     }
 
     @Override
     public String toString() {
-        return "Transport{" +
-                "model='" + model + '\'' +
-                ", speed=" + speed +
-                '}';
+        return model + " Скорость " + speed;
+
     }
-
-
-
 }

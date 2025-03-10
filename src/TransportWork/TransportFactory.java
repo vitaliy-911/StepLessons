@@ -5,27 +5,21 @@ import java.util.Random;
 
 public class TransportFactory {
 
-    private static Random random = new Random();
+    private static final Random random = new Random();
 
     private final static List<String> model = List.of("BMW", "NISSAN", "AUDI", "HONDA");
-    private static int val;
+    private final static List<String> fuel = List.of("GAZ", "DESEL", "FUEL", "ELECTRICITY");
 
     public static Transport next() {
         String mod = model.get(random.nextInt(model.size()));
-        int speed= random.nextInt(100,250);
-        val = random.nextInt(1, 4);
-        switch (val) {
-            case 1:
-
-                return new Car(mod, speed, "GAZ");
-            case 2:
-
-                return new Bike(mod,speed, random.isDeprecated());
-            case 3:
-
-                return new Truck(mod,speed, random.nextInt(1500,2000));
-        }
-        return null;
+        String fuel1 = fuel.get(random.nextInt(fuel.size()));
+        int speed = random.nextInt(100, 250);
+        int val = random.nextInt(1, 4);
+        return switch (val) {
+            case 1 -> new Car(mod, speed, fuel1);
+            case 2 -> new Bike(mod, speed, random.isDeprecated());
+            case 3 -> new Truck(mod, speed, random.nextInt(1500, 2000));
+            default -> null;
+        };
     }
-
 }

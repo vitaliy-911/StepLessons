@@ -11,7 +11,7 @@ public class Car extends Transport {
 
     @Override
     public String toString() {
-        return super.toString() + " " + fuelType;
+        return super.toString() + " Вид топлива " + fuelType;
     }
 
 

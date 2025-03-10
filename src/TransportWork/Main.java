@@ -2,19 +2,24 @@ package TransportWork;
 
 public class Main {
     public static void main(String[] args) {
-
-        for (int i = 0; i <10 ; i++) {
-            TransportManager.manager.addTransport(TransportFactory.next());
-            TransportManager.manager.removeTransport("NISSAN");
+        TransportManager manager = new TransportManager();
+        for (int i = 0; i < 20; i++) {
+            manager.addTransport(TransportFactory.next());
         }
-        TransportManager.manager.sortTransportByModel();
-        TransportManager.manager.printAllTransport();
-        TransportManager.manager.printUniqueTransport();
-
-
-
-
-
+        manager.printAllTransport();
+        manager.printUniqueTransport();
+        System.out.println("Удаляем");
+        manager.removeTransport("BMW");
+        manager.printAllTransport();
+        manager.printUniqueTransport();
+        System.out.println("Сортируем по модели");
+        manager.sortTransportByModel();
+        manager.printUniqueTransport();
+        manager.printAllTransport();
+        System.out.println("Сортируем по скорости");
+        manager.sortTransportBySpeed();
+        manager.printAllTransport();
+        manager.printUniqueTransport();
 
 
     }

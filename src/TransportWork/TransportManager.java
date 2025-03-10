@@ -1,14 +1,12 @@
 package TransportWork;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class TransportManager {
 
-    public final static TransportManager manager = new TransportManager();
-
     static List<Transport> transportList = new ArrayList<>();
-    static Set<Transport> uniqueTransportSet = new HashSet<>();
-    static List<Transport>sortUniqueTransportSet=new ArrayList<>(uniqueTransportSet);
+    static Set<Transport> uniqueTransportSet = new TreeSet<>(new TransportComparator());
 
     void addTransport(Transport transport) {
         transportList.add(transport);
@@ -16,19 +14,17 @@ public class TransportManager {
     }
 
     void removeTransport(String model) {
-
         transportList.removeIf(transport -> transport.getModel().equals(model));
         uniqueTransportSet.removeIf(transport -> transport.getModel().equals(model));
     }
 
     void sortTransportBySpeed() {
         transportList.sort(Comparator.comparing(Transport::getSpeed));
-        sortUniqueTransportSet.sort(Comparator.comparing(Transport::getSpeed));
+
     }
 
     void sortTransportByModel() {
         transportList.sort(Comparator.comparing(Transport::getModel));
-        sortUniqueTransportSet.sort(Comparator.comparing(Transport::getModel));
     }
 
     void printAllTransport() {
