@@ -4,8 +4,9 @@ import java.util.*;
 
 public class TransportManager {
 
-    private List<Transport> transportList = new ArrayList<>();
-    private Set<Transport> uniqueTransportSet = new TreeSet<>();
+    private final List<Transport> transportList = new ArrayList<>();
+    private final Set<Transport> uniqueTransportSet = new HashSet<>();
+    private Set<Transport> uniqueTransportTreeSet = new TreeSet<>();
 
     void addTransport(Transport transport) {
         transportList.add(transport);
@@ -18,17 +19,17 @@ public class TransportManager {
     }
 
     void sortTransportBySpeed() {
-        transportList.sort(Comparator.comparing(Transport::getSpeed));
-      TreeSet<Transport> sortedBySpeedSet = new TreeSet<>(new TransportSpeedComparator());
-      sortedBySpeedSet.addAll(uniqueTransportSet);
-       uniqueTransportSet = sortedBySpeedSet;
+        transportList.sort(new TransportSpeedComparator());
+        Set<Transport> sortedBySpeedSet = new TreeSet<>(new TransportSpeedComparator());
+        sortedBySpeedSet.addAll(uniqueTransportSet);
+        uniqueTransportTreeSet = sortedBySpeedSet;
     }
 
     void sortTransportByModel() {
         transportList.sort(Comparator.comparing(Transport::getModel));
-        TreeSet<Transport> sortedByModelSet = new TreeSet<>(new TransportModelComparator());
+        Set<Transport> sortedByModelSet = new TreeSet<>(new TransportModelComparator());
         sortedByModelSet.addAll(uniqueTransportSet);
-        uniqueTransportSet = sortedByModelSet;
+        uniqueTransportTreeSet = sortedByModelSet;
     }
 
     void printAllTransport() {
@@ -37,6 +38,9 @@ public class TransportManager {
 
     void printUniqueTransport() {
         System.out.println(uniqueTransportSet);
+    }
 
+    void printUniqueSortTransport() {
+        System.out.println(uniqueTransportTreeSet);
     }
 }

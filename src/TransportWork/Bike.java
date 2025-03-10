@@ -3,13 +3,12 @@ package TransportWork;
 import java.util.Random;
 
 public class Bike extends Transport {
-    private Random random=new Random();
 
     private final boolean hasSidecar;
 
     public Bike(String model, int speed, boolean hasSidecar) {
         super(model, speed);
-        this.hasSidecar =random.nextBoolean();
+        this.hasSidecar = hasSidecar;
     }
 
     @Override

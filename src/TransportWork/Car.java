@@ -13,6 +13,4 @@ public class Car extends Transport {
     public String toString() {
         return super.toString() + " Вид топлива " + fuelType;
     }
-
-
 }

@@ -37,12 +37,11 @@ public abstract class Transport implements Comparable<Transport> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(model, speed);
+        return Objects.hash(model);
     }
 
     @Override
     public String toString() {
         return model + " Скорость " + speed;
-
     }
 }

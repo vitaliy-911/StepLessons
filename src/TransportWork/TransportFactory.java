@@ -17,7 +17,7 @@ public class TransportFactory {
         int val = random.nextInt(1, 4);
         return switch (val) {
             case 1 -> new Car(mod, speed, fuel1);
-            case 2 -> new Bike(mod, speed, random.isDeprecated());
+            case 2 -> new Bike(mod, speed, random.nextBoolean());
             case 3 -> new Truck(mod, speed, random.nextInt(1500, 2000));
             default -> null;
         };
