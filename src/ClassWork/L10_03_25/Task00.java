@@ -18,6 +18,7 @@ public class Task00 {
         boolean containsStudent2= mapGradeToStudent.containsValue(student2);
         Set<Integer>age=mapGradeToStudent.keySet();
         Collection<Student>values=mapGradeToStudent.values();
+
         for (Map.Entry<Integer,Student>entry:mapGradeToStudent.entrySet()){
             Student value=entry.getValue();
             Integer key= entry.getKey();
@@ -26,6 +27,7 @@ public class Task00 {
         }
         mapGradeToStudent.getOrDefault(90,new Student("sdf",12,2));
         mapGradeToStudent.remove(34);
+
         Map<Integer, List<Student>>ageStudentsMap=new HashMap<>();
         List<Student>students=new ArrayList<>();
         students.add(student1);

@@ -2,11 +2,11 @@ package TransportWork2;
 
 import java.util.Objects;
 
-public abstract class Transport implements Comparable<Transport> {
+public abstract class Transport  {
 
     private final String model;
     private final int speed;
-    private final int licensePlate;
+    private final String licensePlate;
 
     public Transport(String model, int speed, String licensePlate) {
         this.model = model;
@@ -14,7 +14,7 @@ public abstract class Transport implements Comparable<Transport> {
         this.licensePlate = licensePlate;
     }
 
-    public int getLicensePlate() {
+    public String getLicensePlate() {
         return licensePlate;
     }
 
@@ -27,19 +27,10 @@ public abstract class Transport implements Comparable<Transport> {
     }
 
     @Override
-    public int compareTo(Transport o) {
-        int nameCompare = this.model.compareTo(o.model);
-        if (nameCompare != 0) {
-            return nameCompare;
-        }
-        return Integer.compare(this.speed, o.speed);
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Transport transport = (Transport) o;
-        return licensePlate == transport.licensePlate;
+        return Objects.equals(licensePlate, transport.licensePlate);
     }
 
     @Override
