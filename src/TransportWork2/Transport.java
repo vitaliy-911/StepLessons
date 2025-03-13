@@ -2,7 +2,7 @@ package TransportWork2;
 
 import java.util.Objects;
 
-public abstract class Transport  {
+public abstract class Transport implements Comparable<Transport> {
 
     private final String model;
     private final int speed;
@@ -24,6 +24,15 @@ public abstract class Transport  {
 
     public int getSpeed() {
         return speed;
+    }
+
+    @Override
+    public int compareTo(Transport o) {
+        int nameCompare = this.model.compareTo(o.model);
+        if (nameCompare != 0) {
+            return nameCompare;
+        }
+        return Integer.compare(this.speed, o.speed);
     }
 
     @Override
