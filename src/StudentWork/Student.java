@@ -1,10 +1,12 @@
 package StudentWork;
 
-public class Student {
+import java.util.Objects;
 
-    private final String name;
-    private final int age;
-    private final double grade;
+public class Student implements Comparable<Student> {
+
+    private String name;
+    private int age;
+    private double grade;
 
     public Student(String name, int age, double grade) {
 
@@ -13,13 +15,38 @@ public class Student {
         this.grade = grade;
     }
 
+    public int getAge() {
+        return age;
+    }
+
     public String getName() {
         return name;
     }
 
     @Override
+    public int compareTo(Student o) {
+        int nameCompare = this.name.compareTo(o.name);
+        if (nameCompare != 0) {
+            return nameCompare;
+        }
+        return Integer.compare(this.age,o.age);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return age == student.age && Objects.equals(name, student.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age);
+    }
+
+    @Override
     public String toString() {
-        return name + " Возраст " + age + " Средний балл " + grade;
+        return name + " " + age + " " + grade;
 
     }
 }

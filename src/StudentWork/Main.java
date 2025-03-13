@@ -1,36 +1,57 @@
 package StudentWork;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<Student> students = new ArrayList<>();
-        List<Student> students1 = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
+        final List<Student> students = new ArrayList<>();
+        final List<Student> students1 = new ArrayList<>();
+        for (int i = 0; i < 1000; i++) {
             students.add(StudentFactory.next());
+            students1.add(StudentFactory.next());
         }
+        sortArray(students);
+        System.out.println(students);
+        System.out.println(students);
+        sortBYComparator(students1,new StudentNameComparator());
+        System.out.println(students1);
+
+
+
+
     }
 
-    public static void findStudentName(List<Student> students, String name) {
+    private static void sortBYComparator(List<Student> students1, Comparator <Student>comparator) {
+        students1.sort(comparator);
+
+    }
+
+    public Student findStudentName(List<Student> students, String name) {
         for (Student student : students) {
             if (student.getName().equals(name)) {
-                System.out.println(student);
+                return student;
             }
-            System.out.println("Такого студента нет");
-            break;
         }
+        return null;
     }
 
-    public static void removeStudentName(List<Student> students, String name) {
+    static void removeStudentName(List<Student> students, String name) {
         students.removeIf(student -> student.getName().equals(name));
     }
 
-    public static void addStudentToList(List<Student> students, List<Student> students1) {
+    static void addStudentToList(List<Student> students, List<Student> students1) {
         students1.addAll(students);
     }
 
-    public static void replaceStudentATIndex(List<Student> students, int index) {
-        students.set(index, StudentFactory.next());
+    public static void replaceStudentATIndex(List<Student> students, int index, Student student) {
+        if (students.size() < index || index < 0) {
+            return;
+        }
+        students.set(index, student);
     }
+
+    private static void sortArray(List<Student> students) {
+        Collections.sort(students);
+    }
+
 }

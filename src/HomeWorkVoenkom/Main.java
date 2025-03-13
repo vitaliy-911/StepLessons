@@ -8,10 +8,9 @@ public class Main {
         Doctor[] doctors = {new Dentist(), new Okulist(), new Surgeon(), new Psychiatrist(), new Therapist()};
         Commission commission = new Commission(doctors);
         ArrayRecruits recruits = new ArrayRecruits(1000);
-        RecruitGenerator generator = new RecruitGenerator();
 
         for (int i = 0; i < 1000; i++) {
-            Recruit recruit = generator.generate();
+            Recruit recruit = RecruitGenerator.generate();
             commission.test(recruit);
             recruits.add(recruit);
         }
@@ -23,7 +22,7 @@ public class Main {
         int tottalInValid = 0;
 
         for (Recruit val : recruits.getRecruits()) {
-            if (val.valid) {
+            if (val.isValid()) {
                 validRecruits.add(val);
                 tottalValid++;
             } else {
