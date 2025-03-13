@@ -10,6 +10,9 @@ public class TransportFactory {
     private final static List<String> model = List.of("BMW", "NISSAN", "AUDI", "HONDA");
     private final static List<String> fuel = List.of("GAZ", "DESEL", "FUEL", "ELECTRICITY");
 
+    private TransportFactory() {
+    }
+
     public static Transport next() {
 
         String randomlicensePlate = String.valueOf(random.nextInt(1000, 9999));

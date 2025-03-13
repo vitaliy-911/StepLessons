@@ -19,7 +19,7 @@ public class TransportManager {
         return transportByPlate.get(licensePlate);
     }
 
-    public void removeTransport1(String licensePlate) {
+    public void removeTransport(String licensePlate) {
         transportByPlate.remove(licensePlate);
         Set<String> keySet = transportByType.keySet();
 
@@ -32,6 +32,22 @@ public class TransportManager {
             }
         }
     }
+
+//    public void removeTransport1(String licensePlate) {
+//        Transport transport = transportByPlate.remove(licensePlate);
+//
+//        for (Map.Entry<String, List<Transport>> entry : transportByType.entrySet()) {
+//            List<Transport> value = entry.getValue();
+//            Iterator<Transport> iterator = value.iterator();
+//            while (iterator.hasNext()) {
+//                Transport next = iterator.next();
+//                if (licensePlate.equals(next.getLicensePlate())) {
+//                    iterator.remove();
+//                }
+//            }
+//        }
+//    }
+//}
 
     public List<Transport> getTransportByType(String type) {
         return transportByType.get(type);
