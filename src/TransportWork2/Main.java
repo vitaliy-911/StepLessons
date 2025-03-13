@@ -8,17 +8,17 @@ public class Main {
         TransportManager manager = new TransportManager();
 
         for (int i = 0; i < 20; i++) {
-            manager.addTransport1(TransportFactory.next());
+            manager.addTransport(TransportFactory.next());
         }
 
 
 
-        Transport wet = manager.findTransportByPlate1("4235");
+        Transport wet = manager.findTransportByPlate("4235");
         System.out.println(wet);
 
 
         Transport fastestTransportByType = manager.getFastestTransportByType("Car");
-        manager.printAllTransport1();
+        manager.printAllTransport();
 
         System.out.println(fastestTransportByType);
 

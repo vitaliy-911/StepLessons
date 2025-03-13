@@ -7,7 +7,7 @@ public class TransportManager {
     private final Map<String, Transport> transportByPlate = new HashMap<>();
     private final Map<String, List<Transport>> transportByType = new HashMap<>();
 
-    void addTransport1(Transport transport) {
+    void addTransport(Transport transport) {
         transportByPlate.put(transport.getLicensePlate(), transport);
 
         String type = transport.getClass().getSimpleName();
@@ -15,7 +15,7 @@ public class TransportManager {
         transportByType.get(type).add(transport);
     }
 
-    public Transport findTransportByPlate1(String licensePlate) {
+    public Transport findTransportByPlate(String licensePlate) {
         return transportByPlate.get(licensePlate);
     }
 
@@ -43,7 +43,7 @@ public class TransportManager {
         return transports.getLast();
     }
 
-    void printAllTransport1() {
+    void printAllTransport() {
         System.out.println(transportByPlate);
 
     }
