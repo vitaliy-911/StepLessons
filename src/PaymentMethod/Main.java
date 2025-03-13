@@ -28,7 +28,7 @@ public class Main {
         }
         if (value == 2) {
             System.out.println("Введите сумму");
-            CreditCard creditCard = new CreditCard(1234567, "Иванов Иван");
+            CreditCard creditCard3 = new CreditCard(1234567, "Иванов Иван");
             creditCard.pay(scanner.nextDouble());
         }
         if (value == 3) {
