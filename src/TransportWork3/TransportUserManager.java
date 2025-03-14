@@ -8,11 +8,14 @@ public class TransportUserManager {
 
 
     public void addTransport(User user, Transport transport, int size) {
-        TreeSet<Transport>transports=new TreeSet<>();
-        for (int i = 0; i < size; i++) {
-           transports.add(transport);
-        }
-        transportByOwner.putIfAbsent(user, new ArrayList<>(transports));
+        TreeSet<Transport> transports = new TreeSet<>();
+
+//        for (int i = 0; i < size; i++) {
+//            transports.add(transport);
+//        }
+//        transportByOwner.putIfAbsent(user, new ArrayList<>(transports));
+//        transportByOwner.get(user).add(transport);
+        transportByOwner.putIfAbsent(user, new ArrayList<>());
         transportByOwner.get(user).add(transport);
     }
 
