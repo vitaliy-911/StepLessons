@@ -60,7 +60,8 @@ public class TransportManager {
     }
 
     void printAllTransport() {
-        System.out.println(transportByPlate);
+       // System.out.println(transportByPlate);
+        System.out.println(transportByType);
 
     }
 

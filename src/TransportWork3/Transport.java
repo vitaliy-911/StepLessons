@@ -21,7 +21,7 @@ public abstract class Transport implements Comparable<Transport> {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser() {
         this.user = user;
     }
 

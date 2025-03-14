@@ -4,11 +4,15 @@ import java.util.*;
 
 public class TransportUserManager {
 
-    private Map<User, List<Transport>> transportByOwner = new HashMap<>();
+    private final Map<User, List<Transport>> transportByOwner = new HashMap<>();
 
-    public void addTransport(Transport transport) {
-        User user = transport.getUser();
-        transportByOwner.putIfAbsent(user, new ArrayList<>());
+
+    public void addTransport(User user, Transport transport, int size) {
+        TreeSet<Transport>transports=new TreeSet<>();
+        for (int i = 0; i < size; i++) {
+           transports.add(transport);
+        }
+        transportByOwner.putIfAbsent(user, new ArrayList<>(transports));
         transportByOwner.get(user).add(transport);
     }
 
@@ -33,6 +37,10 @@ public class TransportUserManager {
         List<Transport> transports = transportByOwner.get(owner);
         transports.sort(new TransportSpeedComparator());
         return transports.getLast();
+    }
+
+    public void printAllOwnersAndTransport() {
+        System.out.println(transportByOwner);
     }
 
 }
