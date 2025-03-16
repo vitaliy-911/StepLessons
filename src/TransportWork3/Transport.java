@@ -15,6 +15,7 @@ public abstract class Transport implements Comparable<Transport> {
         this.speed = speed;
         this.licensePlate = licensePlate;
         this.year = year;
+        this.user=getUser();
     }
 
     public User getUser() {
