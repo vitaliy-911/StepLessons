@@ -19,5 +19,25 @@ public class Main {
         //у кого больше траспорта
         transportUserManager.UserFindOwnerWithMostCars();
 
+        TransportStatistics transportStatistics=new TransportStatistics();
+        for (int i = 0; i <20 ; i++) {
+            Transport transport=TransportFactory.next();
+            transportStatistics.addTransport(transport);
+        }
+        transportStatistics.printBrandStatistics();
+
+        TransportSpeedGroopper transportSpeedGroopper=new TransportSpeedGroopper();
+
+        for (int i = 0; i <2000 ; i++) {
+            Transport transport=TransportFactory.next();
+            transportSpeedGroopper.add(transport);
+        }
+        transportSpeedGroopper.getTransportBySpeed(120);
+
+
+
+
+
     }
+
 }
