@@ -6,7 +6,8 @@ public class TransportUserManager {
 
     private final Map<User, List<Transport>> transportByOwner = new HashMap<>();
 
-    public void addTransport(User user, Transport transport) {
+    public void addTransport( Transport transport) {
+        User user=transport.getUser();
         transportByOwner.putIfAbsent(user, new ArrayList<>());
         transportByOwner.get(user).add(transport);
     }
