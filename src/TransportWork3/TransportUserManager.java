@@ -6,52 +6,42 @@ public class TransportUserManager {
 
     private final Map<User, List<Transport>> transportByOwner = new HashMap<>();
 
-    public void addTransport( Transport transport) {
-        User user=transport.getUser();
+    public void addTransport(Transport transport) {
+        User user = transport.getUser();
         transportByOwner.putIfAbsent(user, new ArrayList<>());
         transportByOwner.get(user).add(transport);
     }
 
-    public  List<Transport> getTransportByOwner(User owner) {
-        System.out.println(owner + " " + transportByOwner.get(owner));
+    public List<Transport> getTransportByOwner(User owner) {
         return transportByOwner.get(owner);
     }
 
     public void removeTransport(User owner, String licensePlate) {
         List<Transport> transports = transportByOwner.get(owner);
-        if (transports != null) {
-            Iterator<Transport> iterator = transports.iterator();
-            while (iterator.hasNext()) {
-                Transport next = iterator.next();
-                if (licensePlate.equals(next.getLicensePlate())) {
-                    iterator.remove();
-                    System.out.println("Удалён транспорт с номером: " + licensePlate);
-                    break;
-                }
+        Iterator<Transport> iterator = transports.iterator();
+        while (iterator.hasNext()) {
+            Transport next = iterator.next();
+            if (licensePlate.equals(next.getLicensePlate())) {
+                iterator.remove();
             }
         }
-        System.out.println("номер не найден");
     }
 
     public Transport getFastestTransportByType(User owner) {
         List<Transport> transportsBySpeed = transportByOwner.get(owner);
-        if (transportsBySpeed != null) {
-            transportsBySpeed.sort(new TransportSpeedComparator());
-            System.out.println(owner + " " + transportsBySpeed.getLast());
-            return transportsBySpeed.getLast();
-        }
-        return null;
+        transportsBySpeed.sort(new TransportSpeedComparator());
+        return transportsBySpeed.getLast();
+
     }
 
-    public void UserFindOwnerWithMostCars() {
+    public User UserFindOwnerWithMostCars() {
         TreeMap<Integer, User> ownersCarsNum = new TreeMap<>();
         for (Map.Entry<User, List<Transport>> entry : transportByOwner.entrySet()) {
             int size = entry.getValue().size();
             User value = entry.getKey();
             ownersCarsNum.put(size, value);
         }
-        System.out.println("Владелец с самым большим числом транспорта: " + ownersCarsNum.lastEntry().getValue());
-
+        return ownersCarsNum.lastEntry().getValue();
     }
 
     public void printAllOwnersAndTransport() {

@@ -12,8 +12,6 @@ public class TransportSpeedGroopper {
     }
 
     Set<Transport> getTransportBySpeed(int speed) {
-        System.out.println(transportBySpeed.containsKey(speed)
-                ? transportBySpeed.get(speed) : "Транспорта с такой скоростью нет.");
         return transportBySpeed.get(speed);
     }
 }
