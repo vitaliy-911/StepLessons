@@ -1,4 +1,4 @@
-package TransportWork3;
+package TransportWork3.model;
 
 import java.util.Objects;
 

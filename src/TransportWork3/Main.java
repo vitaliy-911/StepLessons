@@ -1,5 +1,11 @@
 package TransportWork3;
 
+import TransportWork3.factory.TransportFactory;
+import TransportWork3.model.Transport;
+import TransportWork3.model.User;
+import TransportWork3.factory.UserFactory;
+import TransportWork3.manager.TransportUserManager;
+
 public class Main {
     public static void main(String[] args) {
         TransportUserManager transportUserManager = new TransportUserManager();

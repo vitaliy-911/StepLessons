@@ -1,4 +1,6 @@
-package TransportWork3;
+package TransportWork3.factory;
+
+import TransportWork3.model.User;
 
 import java.util.List;
 import java.util.Random;

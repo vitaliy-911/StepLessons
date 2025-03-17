@@ -1,4 +1,8 @@
-package TransportWork3;
+package TransportWork3.manager;
+
+import TransportWork3.comparator.TransportSpeedComparator;
+import TransportWork3.model.Transport;
+import TransportWork3.model.User;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package TransportWork3;
+package TransportWork3.model;
 
 public class Car extends Transport {
 

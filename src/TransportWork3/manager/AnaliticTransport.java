@@ -1,9 +1,9 @@
-package TransportWork3;
+package TransportWork3.manager;
+
+import TransportWork3.model.Transport;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class AnaliticTransport {
     private final List<Transport> transportsAnalytics = new ArrayList<>();

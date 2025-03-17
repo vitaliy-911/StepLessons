@@ -1,4 +1,9 @@
-package TransportWork3;
+package TransportWork3.factory;
+
+import TransportWork3.model.Bike;
+import TransportWork3.model.Car;
+import TransportWork3.model.Transport;
+import TransportWork3.model.Truck;
 
 import java.util.List;
 import java.util.Random;

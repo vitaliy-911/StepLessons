@@ -1,4 +1,6 @@
-package TransportWork3;
+package TransportWork3.comparator;
+
+import TransportWork3.model.Transport;
 
 import java.util.Comparator;
 

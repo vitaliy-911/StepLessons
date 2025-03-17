@@ -1,4 +1,6 @@
-package TransportWork3;
+package TransportWork3.manager;
+
+import TransportWork3.model.Transport;
 
 import java.util.HashMap;
 import java.util.Map;
