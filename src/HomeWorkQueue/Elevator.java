@@ -11,7 +11,6 @@ public class Elevator {
 //    int getCurrentPassengers() – узнать, сколько пассажиров в лифте.
 //    String peekNextToExit() – посмотреть, кто выйдет первым (без удаления).
 //    boolean isFull() – проверить, заполнен ли лифт.
-//
 //    class Elevator
 //    private final int maxCapacity; Проверяйте и задайте (через конструктор) сколько людей может поместится в лифте.
     private final Queue<String> queue = new LinkedList<>();
