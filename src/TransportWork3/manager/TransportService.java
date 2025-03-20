@@ -56,20 +56,25 @@ public class TransportService {
 //    Использовать Map<String, Integer>, где ключ – марка (model), значение – количество машин.
 //    Отсортировать по убыванию и взять топ-5.
     public List<String> findTop5MostPopularBrands() {
-
+        Map<String, Integer> brandCount = new HashMap<>();
         List<String> most5Brands = new ArrayList<>();
         for (Transport tr : transports) {
-            String transport = tr.getModel();
-            most5Brands.add(transport);
+            String brand = tr.getModel().toLowerCase();
+            brandCount.put(brand, brandCount.getOrDefault(brand, 0) + 1);
         }
-        Map<String, Integer> brand = new HashMap<>();
-
-        for (Map.Entry<String, Integer> entry : brand.entrySet()) {
-
-            String model = entry.getKey();
+        List<Map.Entry<String, Integer>> list = new ArrayList<>(brandCount.entrySet());
+        list.sort(new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                return Integer.compare(o1.getValue(), o2.getValue());
+            }
+        });
+        for (int i = 0; i < Math.min(5, list.size()); i++) {
+            most5Brands.add(list.get(i).getKey());
         }
         return most5Brands;
     }
+
 
     //        4. Группировка машин по возрасту
 //    Задача: Разделить машины по категориям возраста:
@@ -80,8 +85,8 @@ public class TransportService {
 //    Map<String, List<Transport>> groupByAge();
 //    Где ключ – категория ("Новые", "Средние", "Старые"),
 //    а значение – список машин из этой категории.
-    public Map<String, List<Transport>> groupByAge() {
-        Map<String, List<Transport>> groupByAge = new HashMap<>();
+    public Map<AgeType, List<Transport>> groupByAge() {
+        Map<AgeType, List<Transport>> groupByAge = new HashMap<>();
         List<Transport> newTr = new ArrayList<>();
         List<Transport> oldTr = new ArrayList<>();
         List<Transport> averageTr = new ArrayList<>();
@@ -90,14 +95,27 @@ public class TransportService {
             if (age == 2025 && age > 2023) {
                 newTr.add(tr);
             }
+            if (age == 2000 || age < 2010) {
+                oldTr.add(tr);
+            } else {
+                averageTr.add(tr);
+            }
         }
-        for (Map.Entry<String, List<Transport>> entry : groupByAge().entrySet()) {
-
-            groupByAge.put(String.valueOf(AgeType.NEW), new ArrayList<>());
-            groupByAge.get(AgeType.NEW).add((Transport) newTr);
-        }
+        groupByAge.put(AgeType.NEW, newTr);
+        groupByAge.put(AgeType.OLD, oldTr);
+        groupByAge.put(AgeType.AVERAGE, averageTr);
         return groupByAge;
+    }
 
+    public Map<String, Integer> countTranspoprtByType() {
+        Map<String, Integer> countTranspoprtByType = new HashMap<>();
+        for (Transport transport : transports) {
+            String simplName = transport.getClass().getSimpleName();
+
+            countTranspoprtByType.put(simplName, countTranspoprtByType.getOrDefault(simplName, 0));
+            //countTranspoprtByType.put(simplName,++);
+        }
+        return countTranspoprtByType;
     }
 
 
