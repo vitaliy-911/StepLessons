@@ -51,7 +51,7 @@ public class Elevator {
     }
 
     public boolean isFull() {
-        if (queue.size() < getMaxCapacity()) {
+        if (queue.isEmpty()) {
             System.out.println("Лифт не заполнен");
             return false;
         } else {
