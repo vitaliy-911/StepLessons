@@ -20,7 +20,7 @@ public class Task00 {
         System.out.println(taskQueue);
         Deque<String> deque = new ArrayDeque<>();
         deque.offerFirst("Первый");
-        deque.offerLast("оследний");
+        deque.offerLast("Последний");
 
     }
 }
