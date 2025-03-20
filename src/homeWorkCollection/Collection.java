@@ -18,7 +18,13 @@ public class Collection {
 
         //📌 3. Проверить, есть ли дубликаты в List
         //Задача: Проверить, есть ли в List повторяющиеся элементы.
-        //Ищем уникальные элементы
+        boolean hasDuplicates;
+        if (name.contains(name)) hasDuplicates = true;
+        else hasDuplicates = false;
+
+
+//        📌 2. Найти все уникальные элементы в List
+//        Задача: Из List<Integer> выбрать только уникальные числа.
         List<Integer> numbers = List.of(4, 2, 2, 3, 1, 4, 5);
         HashSet<Integer> num = new HashSet<>(numbers);
         System.out.println(num);
@@ -65,7 +71,7 @@ public class Collection {
 
 //        📌 8. Найти первое уникальное слово в List
 //        Задача: Найти первое слово, которое встречается только один раз.
-        List<String> animal = List.of("кот", "собака", "кот", "птица", "рыба", "рыба");
+        List<String> animal = List.of("кот", "енот","собака" ,"кот", "птица", "рыба", "рыба");
         Set<String> animalSort = new HashSet<>(animal);
         List<String> animalFirst = new ArrayList<>(animalSort);
         System.out.println(animalFirst.getLast() + " первое слово,встречающаяся первый раз ");

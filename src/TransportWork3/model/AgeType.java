@@ -1,5 +1,17 @@
 package TransportWork3.model;
 
 public enum AgeType {
-    NEW,AVERAGE,OLD
+    NEW("Новый"),
+    AVERAGE("Средний"),
+    OLD("Старый");
+
+    AgeType(String rusName) {
+        this.rusName = rusName;
+    }
+
+    public String getRusName() {
+        return rusName;
+    }
+
+    private final String rusName;
 }
