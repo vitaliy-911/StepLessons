@@ -1,4 +1,9 @@
-package TransportWork2;
+package TransportWork3.factory;
+
+import TransportWork3.model.Bike;
+import TransportWork3.model.Car;
+import TransportWork3.model.Transport;
+import TransportWork3.model.Truck;
 
 import java.util.List;
 import java.util.Random;
@@ -20,10 +25,11 @@ public class TransportFactory {
         String fuel1 = fuel.get(random.nextInt(fuel.size()));
         int speed = random.nextInt(100, 250);
         int val = random.nextInt(1, 4);
+        int year = random.nextInt(2000, 2025);
         return switch (val) {
-            case 1 -> new Car(mod, speed, randomlicensePlate, fuel1);
-            case 2 -> new Bike(mod, speed, randomlicensePlate, random.nextBoolean());
-            case 3 -> new Truck(mod, speed, randomlicensePlate, random.nextInt(1500, 2000));
+            case 1 -> new Car(mod, speed, randomlicensePlate, year, fuel1);
+            case 2 -> new Bike(mod, speed, randomlicensePlate, year, random.nextBoolean());
+            case 3 -> new Truck(mod, speed, randomlicensePlate, year, random.nextInt(1500, 2000));
             default -> null;
         };
     }

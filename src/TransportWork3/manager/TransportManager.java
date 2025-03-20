@@ -1,4 +1,7 @@
-package TransportWork2;
+package TransportWork3.manager;
+
+import TransportWork3.comparator.TransportSpeedComparator;
+import TransportWork3.model.Transport;
 
 import java.util.*;
 
@@ -60,10 +63,10 @@ public class TransportManager {
     }
 
     void printAllTransport() {
-       // System.out.println(transportByPlate);
-        System.out.println(transportByType);
+        System.out.println(transportByPlate);
 
     }
+
 
     public Map<String, Transport> getTransportByPlate() {
         return transportByPlate;
