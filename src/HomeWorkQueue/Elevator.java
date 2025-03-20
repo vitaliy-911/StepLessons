@@ -1,5 +1,6 @@
 package HomeWorkQueue;
 
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -13,7 +14,7 @@ public class Elevator {
 //    boolean isFull() – проверить, заполнен ли лифт.
 //    class Elevator
 //    private final int maxCapacity; Проверяйте и задайте (через конструктор) сколько людей может поместится в лифте.
-    private final Queue<String> queue = new LinkedList<>();
+    private final Deque<String> deque = new LinkedList<>();
     private final int maxCapacity;
 
     public Elevator(int maxCapacity) {
@@ -25,33 +26,35 @@ public class Elevator {
     }
 
     public void enter(String person) {
-        queue.add(person);
+        deque.add(person);
         System.out.println(person + " зашел в лифт ");
-        if (queue.size() > getMaxCapacity()) {
+        if (deque.size() > getMaxCapacity()) {
             System.out.println("Лифт переполнен движение не возможно");
+            deque.removeLast();
+            System.out.println("Вышел последний входящий в лифт");
         }
     }
 
     public String exit() {
-        String person = queue.remove();
+        String person = deque.remove();
         System.out.println(person + " вышел из лифта ");
         return person;
     }
 
     public int getCurrentPassengers() {
-        int passengers = queue.size();
+        int passengers = deque.size();
         System.out.println(passengers + " пассажиров в лифте ");
         return passengers;
     }
 
     public String peekNextToExit() {
-        String passenger = queue.element();
+        String passenger = deque.element();
         System.out.println(passenger + " следующий в очереди ");
         return passenger;
     }
 
     public boolean isFull() {
-        if (queue.isEmpty()) {
+        if (deque.isEmpty()) {
             System.out.println("Лифт не заполнен");
             return false;
         } else {
