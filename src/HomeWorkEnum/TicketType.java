@@ -1,20 +1,20 @@
 package HomeWorkEnum;
 
 public enum TicketType {
-    VIP(100,"Зал с мягкими креслами и напитками"),
-    STANDARD(500, "Обычное место"),
-    STUDENT(250,"Студенческий билет + скидка");
+    VIP(1000,"Вип"),
+    STANDARD(500,"Стандарт"),
+    STUDENT(250,"Студент");
 
-    private final int price;
+    private final int basePrise;
     private final String description;
 
-    TicketType(int price, String description) {
-        this.price = price;
+    TicketType(int basePrise, String description) {
+        this.basePrise = basePrise;
         this.description = description;
     }
 
-    public int getPrice() {
-        return price;
+    public int getBasePrise() {
+        return basePrise;
     }
 
     public String getDescription() {

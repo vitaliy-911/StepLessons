@@ -1,4 +1,4 @@
-package HomeWorkEnum;
+package OnlainShoop;
 
 public class Ticket {
     private String buyerName;
