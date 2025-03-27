@@ -18,6 +18,7 @@ public class LotteryMachine<T> {
         }
     }
 
+
     public void init() {
         if (!initialized) {
             Collections.shuffle(allItems);
