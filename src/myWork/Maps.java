@@ -22,7 +22,7 @@ public class Maps {
         System.out.println(by);
 
         Set<String> keySet = apper.keySet();//получаем все ключи и убераем спомощье Set повторения
-        Collection<String> values = apper.values();//получаем все значения
+        Collection<String> values = apper.values();//получаем все значения в виде массива
         System.out.println(keySet);
         System.out.println(values);
 
