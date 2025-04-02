@@ -12,7 +12,7 @@ public class Main {
         }
 
         lotto.init();
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 3; i++) {
             try {
                 System.out.println("победитель" + lotto.pick());
             }
