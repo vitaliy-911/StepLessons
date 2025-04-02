@@ -1,4 +1,4 @@
-package HomeWorkGenerics;
+package HomeWorkGenericsAndExceptionLotto;
 
 import java.util.Objects;
 
