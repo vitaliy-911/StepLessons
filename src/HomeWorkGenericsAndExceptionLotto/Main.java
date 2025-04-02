@@ -13,7 +13,12 @@ public class Main {
 
         lotto.init();
         for (int i = 0; i < 2; i++) {
-            System.out.println("победитель" + lotto.pick());
+            try {
+                System.out.println("победитель" + lotto.pick());
+            }
+            catch (MaxWinnersExceededException e){
+                System.out.println("ошибка" + e.getMessage());
+            }
         }
 
         try {
