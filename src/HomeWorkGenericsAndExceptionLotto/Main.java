@@ -1,7 +1,7 @@
 package HomeWorkGenericsAndExceptionLotto;
 
 public class Main {
-    public static void main(String[] args) throws MaxWinnersExceededException {
+    public static void main(String[] args) {
         LotteryMachine<Participant> lotto = new LotteryMachine<>();
         for (int i = 0; i < 10; i++) {
             try {
@@ -26,6 +26,6 @@ public class Main {
         } catch (NotInitializedException e) {
             System.out.println("ошибка" + e.getMessage());
         }
-        System.out.println(lotto.ageToWinners());
+        System.out.println(lotto.groupByAge());
     }
 }

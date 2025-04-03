@@ -14,7 +14,6 @@ public class LotteryMachine<T extends Participant> {
     private int countRoundWiners = 0;
 
     public void add(T item) throws UnderageException, DuplicateParticipantException {
-        Participant participant =(Participant) item;
         if (initialized) {
             return;
         }
@@ -70,20 +69,32 @@ public class LotteryMachine<T extends Participant> {
         return queue.size();
     }
 
-    public Map<Age, Integer> ageToWinners() {
-        Map<Age, Integer> map = new HashMap<>(Map.of(Age.YOUNG, 0, Age.AVERAGE, 0, Age.OLD, 0));
+    public Map<AgeType, Integer> ageToWinners() {
+        Map<AgeType, Integer> map = new HashMap<>(Map.of(AgeType.YOUNG, 0, AgeType.AVERAGE, 0, AgeType.OLD, 0));
         for (T winner : winners) {
 
             int age = winner.getAge();
             if (age < 30) {
-                map.put(Age.YOUNG, map.get(Age.YOUNG) + 1);
+                map.put(AgeType.YOUNG, map.get(AgeType.YOUNG) + 1);
             }
             if (age > 30 && age < 50) {
-                map.put(Age.AVERAGE, map.get(Age.AVERAGE) + 1);
+                map.put(AgeType.AVERAGE, map.get(AgeType.AVERAGE) + 1);
             }
             if (age > 50) {
-                map.put(Age.OLD, map.get(Age.OLD) + 1);
+                map.put(AgeType.OLD, map.get(AgeType.OLD) + 1);
             }
+        }
+        return map;
+    }
+
+    public Map<AgeType, Integer> groupByAge() {
+        Map<AgeType, Integer> map = new HashMap<>(Map.of(AgeType.YOUNG, 0, AgeType.AVERAGE, 0, AgeType.OLD, 0));
+
+        for (Participant participant : winners) {
+            AgeType ageType = participant.getAgeType();
+            Integer i = map.get(ageType);
+            map.put(ageType, i + 1);
+
         }
         return map;
     }

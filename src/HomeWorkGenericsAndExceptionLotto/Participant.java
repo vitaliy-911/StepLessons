@@ -7,6 +7,7 @@ public class Participant {
     private final int age;
     private final Sex sex;
     int passportId;
+    private AgeType ageType;
 
 
     public Participant(String name, int age, Sex sex, int passportId) {
@@ -30,6 +31,14 @@ public class Participant {
 
     public int getPassportId() {
         return passportId;
+    }
+
+    public AgeType getAgeType() {
+        return ageType;
+    }
+
+    public void setAgeType(AgeType ageType) {
+        this.ageType = ageType;
     }
 
     @Override
