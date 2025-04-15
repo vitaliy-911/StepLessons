@@ -33,10 +33,10 @@ public class Methods {
         return null;
     }
 
-    public List<String> filter(List<String>word,Predicate<String> predicate){
-        List<String>words=new ArrayList<>();
-        for (String element:word){
-            if (predicate.test(element)){
+    public List<String> filter(List<String> word, Predicate<String> predicate) {
+        List<String> words = new ArrayList<>();
+        for (String element : word) {
+            if (predicate.test(element)) {
                 words.add(element);
             }
         }
