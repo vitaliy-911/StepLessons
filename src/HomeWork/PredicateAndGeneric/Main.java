@@ -10,9 +10,9 @@ public class Main {
         //ищем слова начинающие на букву
         List<String> strings = List.of("an", "dav");
         List<Integer> numbers = List.of(0, 2, 3, 4, 5, 6);
-        List<String> java = List.of("home", "world", "java");
+        List<String> java = List.of("home", "java", "world", "java");
         Integer[] array = {1, 2, 3, 4, 5, 6, 7};
-        List<String>stringList=new ArrayList<>();
+        List<String> stringList = new ArrayList<>();
 
         boolean match = anyMatch(strings, (s -> s.startsWith("a")));
         System.out.println(match);
@@ -35,6 +35,8 @@ public class Main {
         //Вывод элементов массива любого типа
         printArray(array);
         // Подсчёт количества вхождений элемента
+        int java2 = count(java, "java");
+        System.out.println(java2);
 
 
         // Проверка наличия элемента в массиве
@@ -47,13 +49,33 @@ public class Main {
 //        copyList(strings,stringList);
 
         //Нахождение индекса элемента
+        int indexElement = getIndexElement(array, "world");
+        System.out.println(indexElement);
 
 
-       // Объединение двух списков
+        // Объединение двух списков
 //        compereList(strings,java);
 
 
+    }
 
+    public static <T> int getIndexElement(T[] array, T element) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == element) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static <T> int count(List<T> el, T element) {
+        int count = 0;
+        for (T s : el) {
+            if (s.equals(element)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public static <T> boolean anyMatch(List<T> lines, Predicate<T> predicate) {
