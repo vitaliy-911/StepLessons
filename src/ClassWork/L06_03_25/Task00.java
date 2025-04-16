@@ -1,8 +1,8 @@
 package ClassWork.L06_03_25;
 
-import StudentWork.Student;
-import StudentWork.StudentFactory;
-import StudentWork.StudentNameComparator;
+import HomeWork.StudentWork.Student;
+import HomeWork.StudentWork.StudentFactory;
+import HomeWork.StudentWork.StudentNameComparator;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
