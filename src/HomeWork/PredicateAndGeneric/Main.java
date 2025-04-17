@@ -3,6 +3,7 @@ package HomeWork.PredicateAndGeneric;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Predicate;
 
 public class Main {
@@ -18,16 +19,16 @@ public class Main {
         stringList.add("Серафим");
 
         //ищем слова начинающие на букву
-        boolean match = anyMatch(strings, (s -> s.startsWith("a")));
+        boolean match = anyMatch(strings, s -> s.startsWith("a"));
         System.out.println(match);
         //все числа больше 0? Все люди старше 18?
-        boolean match1 = allMatch(numbers, (n -> n > 0));
+        boolean match1 = allMatch(numbers, n -> n > 0);
         System.out.println(match1);
         //Поиск элемента по предикату
-        List<String> java1 = listFindFirstMatch(java, (s -> s.contains("java")));
+        List<String> java1 = listFindFirstMatch(java, s -> s.contains("java"));
         System.out.println(java1);
         //Фильтрация строк по длине
-        List<String> filter = filterByLength(stringList, (s -> s.length() > 5));
+        List<String> filter = filterByLength(stringList, s -> s.length() > 5);
         System.out.println(filter);
         System.out.println("_____________________________");
 
@@ -61,14 +62,14 @@ public class Main {
 
     }
 
-    public static <T> List<T>  transformation(T[] element) {
-        List<T> transformer = new ArrayList<>(List.of(element));
-        return transformer;
+    public static <T> List<T> transformation(T[] array) {
+        return new ArrayList<>(List.of(array));
+
     }
 
-    public static <T> boolean presenceOfElement(T[] el, T element) {
-        for (int i = 0; i < el.length; i++) {
-            if (el[i].equals(element)) {
+    public static <T> boolean presenceOfElement(T[] array, T element) {
+        for (T el : array) {
+            if (Objects.equals(el, element)) {
                 return true;
             }
         }
@@ -77,7 +78,7 @@ public class Main {
 
     public static <T extends Comparable<T>> T min(T el1, T el2) {
         int i = el1.compareTo(el2);
-        if (i < 0) {
+        if (i <= 0) {
             return el1;
         }
         return el2;
@@ -92,18 +93,18 @@ public class Main {
         return -1;
     }
 
-    public static <T> int count(List<T> el, T element) {
+    public static <T> int count(List<T> list, T element) {
         int count = 0;
-        for (T s : el) {
-            if (s.equals(element)) {
+        for (T el : list) {
+            if (Objects.equals(el, element)) {
                 count++;
             }
         }
         return count;
     }
 
-    public static <T> boolean anyMatch(List<T> lines, Predicate<T> predicate) {
-        for (T element : lines) {
+    public static <T> boolean anyMatch(List<T> list, Predicate<T> predicate) {
+        for (T element : list) {
             if (predicate.test(element)) {
                 return true;
             }
@@ -113,7 +114,7 @@ public class Main {
 
     public static <T> boolean allMatch(List<T> list, Predicate<T> predicate) {
         for (T element : list) {
-            if (predicate.test(element)) {
+            if (!predicate.test(element)) {
                 return false;
             }
         }
@@ -130,23 +131,23 @@ public class Main {
         return result;
     }
 
-    public static <T> List<T> filterByLength(List<T> word, Predicate<T> predicate) {
-        word.removeIf(t -> !predicate.test(t));
-        return word;
+    public static <T> List<T> filterByLength(List<T> list, Predicate<T> predicate) {
+        list.removeIf(predicate);
+        return list;
     }
 
-    public static <T> T getFirst(List<T> element) {
-        return element.getFirst();
+    public static <T> T getFirst(List<T> list) {
+        return list.getFirst();
     }
 
     public static <T> void printArray(T[] array) {
         System.out.println(Arrays.toString(array));
     }
 
-    public static <T> void copyList(List<T> one, List<T> two) {
-        for (T t : one) {
-            two.add(t);
-        }
+    public static <T> List<T> copyList(List<T> one, List<T> two) {
+        List<T> result = new ArrayList<>(one);
+        result.add((T) one);
+        return result;
     }
 
     public static <T> void compereList(List<T> one, List<T> two) {

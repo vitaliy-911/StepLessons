@@ -2,16 +2,21 @@ package ClassWork.Predicates;
 
 public class Apple {
 
-    private int waight;
+    private Integer waight;
     private Color color;
 
-    public Apple(int waight, Color color) {
+    public Apple() {
+
+    }
+
+    public Apple(Integer waight, Color color) {
 
         this.waight = waight;
         this.color = color;
     }
 
-    public int getWaight() {
+
+    public Integer getWaight() {
         return waight;
     }
 
