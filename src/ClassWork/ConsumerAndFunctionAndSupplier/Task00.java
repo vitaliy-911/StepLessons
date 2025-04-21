@@ -50,12 +50,17 @@ public class Task00 {
         BiFunction<Integer, Color, Apple> bf = Apple::new;
         bf.apply(110, Color.GREEN);
 
+//        Function<Apple, Integer> func1 = apple1 -> apple1.getWaight();
+
         apples.sort((a1, a2) -> a1.getWaight().compareTo(a2.getWaight()));
-        Comparator<Apple> comparing = Comparator.comparing((Apple a3) -> a3.getWaight());
+        Comparator<Apple> comparing = Comparator.comparing(a3 -> a3.getWaight());
         apples.sort(comparing);
-        apples.sort(Comparator.comparing(Apple::getWaight).reversed().thenComparing(Apple::getColor));//так пишется  сортировка
-                                                        //обратная сортировка
-                                                                    // и после ее жожно еще сделать сортировку
+        apples.sort(//так пишется  сортировка
+                Comparator.comparing(Apple::getWaight)
+                .reversed() //обратная сортировка
+                .thenComparing(Apple::getColor)); // и после ее жожно еще сделать сортировку
+
+
         Predicate<Apple> predicate = a4 -> a4.getWaight() == 100;
         predicate.and( a5->Color.GREEN.equals(a5.getColor()));
 
