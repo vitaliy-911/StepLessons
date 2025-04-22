@@ -43,6 +43,7 @@ public class Main {
 
         boolean vegan = dishes.stream()
                 .anyMatch(Dish::isVegan);
+        System.out.println(vegan);
         boolean allMatch = dishes.stream()
                 .allMatch(dish -> dish.getCallories() < 1000);
         boolean noneMatch = dishes.stream()
