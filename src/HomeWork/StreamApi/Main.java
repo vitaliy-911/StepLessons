@@ -79,5 +79,7 @@ public class Main {
                 .forEach(d -> System.out.println(d.getName() + ":<" + d.getPrice() * 0.9 + "> Br"));
 
 
+
+
     }
 }
