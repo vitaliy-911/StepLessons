@@ -67,12 +67,16 @@ public class Main {
                         .stream().collect(Collectors.summarizingDouble(GroceryItem::getPrice))));
         System.out.println(doubleSummaryStatisticsMap);
 
-         customers.stream()
-                .peek(customer -> System.out.println("обрабатываем" + customer.getName()));
+        customers.stream()
+                .peek(customer -> System.out.println("обрабатываем " + customer.getName()))
+                .collect(Collectors.toList());
 
-        
-
-
+        List<String> list = customers.stream()
+                .map(customer -> customer.getName())
+                .skip(1)
+                .limit(2)
+                .collect(Collectors.toList());
+        System.out.println(list);
 
     }
 }
