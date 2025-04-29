@@ -4,7 +4,9 @@ import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,26 +25,31 @@ public class Main {
                 ))
         );
 
-
-        List<Double> doubles = accounts.stream()
+//1
+          List<Double> doubles = accounts.stream()
                 .flatMap(l -> l.getTransactions().stream())
                 .map(Transaction::getAmount)
                 .collect(Collectors.toList());
-
+//2
         List<Transaction> typeList = accounts.stream()
                 .flatMap(l -> l.getTransactions().stream())
                 .filter(transaction -> transaction.getType() == Transaction.Type.DEPOSIT)
                 .toList();
-
-        List<Transaction> transactionList = accounts.stream()
+//3
+        List<LocalDate> localDates = accounts.stream()
                 .flatMap(l -> l.getTransactions().stream())
                 .filter(t -> t.getType() == Transaction.Type.WITHDRAWAL)
+                .map(Transaction::getDate)
                 .toList();
+        System.out.println(localDates);
 
-
-        accounts.stream()
-                .map(BankAccount::getOwnerName)
+//4
+        Stream<String> stringStream = accounts.stream()
+                .map(BankAccount::getOwnerName);
+        stringStream
                 .forEach(System.out::println);
+
+ //5
 
         List<Transaction> list = accounts.stream()
                 .flatMap(l -> l.getTransactions().stream())
@@ -54,7 +61,25 @@ public class Main {
                 .sorted(Comparator.comparing(Transaction::getAmount))
                 .toList();
 
+
 //8
+        Map<String, Integer> stringIntegerMap = accounts.stream()
+                .collect(Collectors.toMap(BankAccount::getAccountNumber, bankAccount -> bankAccount.getTransactions().size()));
+        System.out.println(stringIntegerMap);
+
+        //9
+        boolean anyMatch = accounts.stream()
+                .anyMatch(bankAccount -> bankAccount.getTransactions().isEmpty());
+
+        //10
+
+        Set<String> set = accounts.stream()
+                .filter(bankAccount -> bankAccount.getTransactions().stream()
+                        .anyMatch(transaction -> transaction.getType() == Transaction.Type.DEPOSIT))
+                .map(BankAccount::getOwnerName)
+                .collect(Collectors.toSet());
+        System.out.println(set);
+
 
     }
 }
