@@ -1,0 +1,146 @@
+SELECT c.country_name,cont.continent_name,c.capital,lng.language_name 
+FROM countries c INNER JOIN continents cont ON c.continent_id = cont.continent_id
+INNER JOIN country_languages cln ON c.country_id = cln.country_id
+INNER JOIN languages lng ON cln.language_id = lng.language_id
+;
+
+
+
+SELECT country_name,population FROM countries  WHERE population > 100000000 ORDER BY population DESC;
+
+--Города с населением более 5 миллионов (не столицы).  Сортировка от крупных к менее.
+SElECT city_name,population FROM cities  WHERE population >5000000 AND NOT is_capital ORDER BY population DESC;
+
+
+--страны европы
+SELECT c.country_name,cs.continent_name  FROM countries c
+INNER JOIN continents cs ON c.continent_id=cs.continent_id
+WHERE cs.continent_name='Europe';
+
+-- Количество городов в каждой стране
+SELECT c.country_name,COUNT(ct.city_id) //Count считает
+FROM countries c
+INNER JOIN cities ct ON c.country_id=ct.country_id
+GROUP BY c.country_name
+
+--Достопримечательности культурного типа (Cultural)
+SELECT landmark_name, description
+FROM landmarks
+WHERE type ='Cultural'
+
+--Среднее население городов по странам. Сортировка от крупных к менее.
+SELECT c.country_name AS country , AVG(ci.population) AS avg_population
+FROM countries c
+INNER JOIN cities ci
+ON c.country_id = ci.country_id
+GROUP BY c.country_name
+ORDER BY avg_population DESC ;
+
+--Все официальные языки в Швейцарии
+SELECT country_name ,language_name
+FROM countries c
+INNER JOIN country_languages cl
+ON c.country_id = cl.country_id
+INNER JOIN languages l
+ON cl.language_id = l.language_id
+WHERE country_name='Switzerland';
+
+--Вывести список всех стран с их крупнейшим городом
+SELECT  cn.country_name , c.city_name
+FROM cities  c
+INNER JOIN  countries cn
+ON c.country_id = cn.country_id
+WHERE c.population = (SELECT MAX(population)
+FROM cities
+WHERE country_id = c.country_id);
+тоже самое
+SELECT DISTINCT ON (c.country_name) c.country_name, ci.city_name , ci.population
+FROM countries c
+INNER JOIN cities ci ON c.country_id= ci.country_id
+ORDER BY c.country_name, ci.population DESC ;
+
+--Найти топ-3 страны с наибольшей средней плотностью населения в их городах
+SELECT c.country_name ,AVG(ci.population/ c.area_sq_km) AS avg_city_density
+FROM countries c
+INNER JOIN cities ci ON c.country_id = ci.country_id
+WHERE c.area_sq_km >0
+GROUP BY c.country_name
+ORDER BY avg_city_density DESC
+LIMIT 3;
+
+--Найти все континенты, где суммарное население стран больше 1 миллиарда, и вывести их страны
+SELECT con.continent_name, c.country_name
+FROM continents con
+JOIN countries c ON con.continent_id = c.continent_id
+WHERE con.continent_id IN (
+SELECT c2.continent_id
+FROM countries c2
+GROUP BY c2.continent_id
+HAVING SUM(c2.population) > 1000000000
+)
+ORDER BY 1, 2
+
+удаление с возврвтом удаляемого
+DELETE FROM table_name 
+WHERE condition
+RETURNING column1 ,column2
+
+SELECT c.city_name , c.population
+FROM cities c
+WHERE c.population <250000;
+DELETE FROM cities c
+WHERE c.population <250000
+RETURNING c.city_name , c.population
+
+UPDATE table_name
+SET column1 = value1, column2 = value2
+WHERE condition
+RETURNING column1, column2
+
+UPDATE cities
+SET population = population + 1000000
+WHERE city_name = 'Moscow'
+RETURNING population;
+
+CREATE METRIALIZED VIEW view_name AS
+SELECT column1
+FROM table_name
+WHERE condition
+
+DROP VIEW [IF EXISTS] view_name ;
+CREATE OR REPLACE VIEW  view_name AS
+SELECT
+
+REFRESH MATERIALIZED VIEW view_name
+
+CREATE VIEW europe_countries AS
+SELECT c.city_name,con.country_name, c.population
+FROM cities c
+INNER JOIN countries con
+ON c.country_id = con.country_id
+INNER JOIN continents cont
+ON con.continent_id = cont.continent_id
+WHERE cont.continent_name ='Europe' AND c.is_capital = TRUE;
+
+CREATE INDEX idx_landmarks_type_city ON landmarks(type,city_id)
+
+транзакция
+BEGIN;
+UPDATE accounts SET balance = balance-100   WHERE user_id 1;
+UPDATE accounts SET balance = balance+100   WHERE user_id 2;
+COMMIT;
+
+BEGIN;
+это уровень изоляции
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+UPDATE accounts SET balance = balance-100
+WHERE user_id=1;
+это место сохранения
+SAVEPOINT transfer_point;
+
+UPDATE accounts SET balance = balance+100
+WHERE user_id=2;
+откат к месту сохранения
+ROLLBACK TO SAVEPOINT transfer_point;
+
+COMMIT;
