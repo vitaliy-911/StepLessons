@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<style>
+    div.container{
+    width:100%;
+    overflow: auto;
+    }
+    div.container div {
+    width:33%;
+    float: left;
+    }
+    div.container div p{
+    front-weight:bold;
+    }
+    table,th,td{
+    border:1px solid black;
+    text-align:center;
+    }
+    table {
+    width :100%;
+    }
+    table th {
+    background-color:green;}
+
+    #style_red {
+    background-color:red;
+    }
+    .td_bolt {
+    front-weight:bold;
+    background-color:orange;
+    }
+
+
+
+
+
+</style>
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Тут не жирный</p>
+<em>Здесь курсив</em><br>
+<strong>Тут жирный</strong>
+<div class="container">
+    <div style="background-color:#a3baff;">
+        <h2>Минск</h2>
+        <p><strong>Минск столица Беларуси</strong></p>
+        <p>Население 9 млн</p>
+    </div>
+    <div style="background-color:#FFC0C7;">
+        <h2>Москва</h2>
+        <p>Минск столица России</p>
+        <p>Население 145 млн</p>
+
+    </div>
+    <div style="background-color:#D9EEE1;">
+        <h2>Варшава</h2>
+        <p>Минск столица Польши</p>
+        <p>Население 145 млн</p>
+    </div>
+</div>
+<div class="mytable">
+    <table>
+        <tr>
+            <th>Person 1</th>
+            <th>Person 2</th>
+            <th>Person 3</th>
+        </tr>
+        <tr>
+            <td id="style_red">Dima</td>
+            <td>Ivan</td>
+            <td>Sveta</td>
+        </tr>
+        <tr>
+            <td class="td_bolt">35</td>
+            <td class="td_bolt">32</td>
+            <td id="style_red" class="td_bolt">25</td>
+        </tr>
+    </table>
+</div>
+<p>Привет</p>
+<hr color="red" size="10px">
+<p>Мир</p>
+
+</body>
+</html>
