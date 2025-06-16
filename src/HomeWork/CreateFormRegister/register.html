@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+<form action="/register" method="post">
+    <h1>Регистрация</h1>
+    <p>Имя:</p>
+    <input type ="text" name="name" placeholder="Ваше имя">
+    <p>Email</p>
+    <input type ="email" email="email" placeholder="email">
+    <p>Пароль</p>
+    <input type ="password" password="password" placeholder="Пароль">
+    <p>Пол</p>
+    <input type="radio" name="gender" value="male" checked>Мужской
+    <input type="radio" name="gender" value="female"> Женский
+    <p>Интересы</p>
+    <input type="checkbox" name="hobby" value="reading" checked> Чтение
+    <input type="checkbox" name="hobby" value="gaming"> Игры
+    <input type="checkbox" name="hobby" value="sports"> Спорт
+    <p>Страна</p>
+    <label id="city"></label>
+    <label>
+        <select name="city">
+            <option value="moscow">Москва</option>
+            <option value="vitebsk" selected>Витебск</option>
+            <option value="minsk">Минск</option>
+        </select>
+    </label>
+ <button type="button" onclick="document.getElementById('my_dialog').showModal()"Add commentMore actions
+    class="btn">Зарегистрироваться</button>
+</form>
+<dialog id="my_dialog">
+        <p>Регистрация успешна!</p>
+        <button type="button" onclick="this.parentElement.close()">Закрыть</button>
+    </dialog>
+</body>
+</html>
+   
+
+
+    
+     
+
+
+
+    
+
+        
+    
+
+
+    
+
+</body>
+</html>
