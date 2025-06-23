@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="form.css">
+</head>
+
+
+<body>
+<article class="profile-card">
+    
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR4PAdyodpmdRylopX49J63FahG9VPTiLdUA7unce061R3HTBR1xrItXk&s" 
+    alt="" class="avatar">
+    <div class="info">
+        <h1>Анна Иванова</h1>
+        <p>Возраст: 39 лет</p>
+        <p>Email:jhggig@ru</p>
+        <p>Адрес:</p>
+        <p>Хобби</p>
+    </div>
+    <p>Разработчик</p>
+
+    <button type="button" onclick="document.getElementById('my_dialog').showModal()"
+            class="btn">Связаться
+    </button>
+    <div class="star">&#9733</div>
+</article>
+
+<dialog id="my_dialog">
+    <p>Привет</p>
+    <button type="button" onclick="this.parentElement.close()">Закрыть</button>
+</dialog>
+<footer>
+    <p>kjgkjgkjg</p>
+</footer>
+</body>
+</html>
