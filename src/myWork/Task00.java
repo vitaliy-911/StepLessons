@@ -8,7 +8,7 @@ public class Task00 {
         int index = -1;
 
         for (int i = 0; i < array.length ; i++) {
-            if (array[i]==10){
+            if (array[i]==3){
                 index=i;
                 break;
             }
