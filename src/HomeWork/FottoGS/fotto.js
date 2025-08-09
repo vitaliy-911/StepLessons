@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.appendChild(img);
                 card.appendChild(title);
                 gallery.appendChild(card);
+
+                
                 
             }
            
@@ -47,6 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
         gallery.innerHTML ='';
         output.textContent='';
     })
+
+    gallery.addEventListener('click',()=>{
+        gallery.url=url;
+    })
+
+   
 
 
 
